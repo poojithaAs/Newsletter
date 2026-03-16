@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>82% Got Breached Through Containers. Scanning Didn't Save Them. - DevOps Made Simple</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.8; color:#1a1a2e; background:#f0f2f5; }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1a1a2e 40%, #16213e 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,107,107,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(78,205,196,0.06) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,107,107,0.15);
+    border: 1px solid rgba(255,107,107,0.3);
+    color: #ff6b6b;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    position: relative;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 28px;
+    margin-top: 30px;
+    position: relative;
+  }
+  .hero-stat .num {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ff6b6b;
+  }
+  .hero-stat .label {
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.9;
+  }
+
+  /* Container */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  }
+
+  /* Content */
+  .content {
+    padding: 48px 48px 40px;
+  }
+  .content p {
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+    color: #2d2d44;
+  }
+  .content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a1628;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f2f5;
+  }
+  .content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #16213e;
+    margin: 28px 0 12px;
+  }
+  .content strong {
+    color: #0a1628;
+    font-weight: 600;
+  }
+  .content ul, .content ol {
+    margin: 14px 0 18px 24px;
+  }
+  .content li {
+    margin: 8px 0;
+    font-size: 1.02rem;
+    color: #2d2d44;
+  }
+  .content a {
+    color: #2563eb;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(37,99,235,0.3);
+  }
+  .content a:hover {
+    border-bottom-color: #2563eb;
+  }
+
+  /* Callout Boxes */
+  .callout {
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .callout-red {
+    background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+    border-left: 4px solid #ff6b6b;
+  }
+  .callout-blue {
+    background: linear-gradient(135deg, #f0f7ff, #e8f0fe);
+    border-left: 4px solid #2563eb;
+  }
+  .callout-green {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border-left: 4px solid #22c55e;
+  }
+  .callout-dark {
+    background: #0a1628;
+    color: #e2e8f0;
+    border-left: 4px solid #ff6b6b;
+  }
+  .callout-dark strong {
+    color: #ff6b6b;
+  }
+  .callout p {
+    margin-bottom: 8px;
+  }
+  .callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Stats Row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .stat-card {
+    text-align: center;
+    padding: 24px 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .stat-card .stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff6b6b;
+    display: block;
+  }
+  .stat-card .stat-label {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  /* Step Cards */
+  .step-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .step-card:last-child {
+    border-bottom: none;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #0a1628, #16213e);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .step-content h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+  }
+  .step-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #64748b;
+  }
+
+  /* Code Blocks */
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 20px 24px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 16px 0;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #e11d48;
+  }
+
+  /* Comparison Table */
+  .comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95rem;
+  }
+  .comparison th {
+    background: #0a1628;
+    color: white;
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .comparison td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  .comparison tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+  .tag-yes {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .tag-no {
+    display: inline-block;
+    background: #fef2f2;
+    color: #991b1b;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  /* Author Bar */
+  .author-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 48px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .author-info {
+    flex: 1;
+  }
+  .author-info .name {
+    font-weight: 700;
+    color: #0a1628;
+    font-size: 1rem;
+  }
+  .author-info .role {
+    color: #64748b;
+    font-size: 0.88rem;
+  }
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 32px 0 12px;
+  }
+  .tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, #0a1628 0%, #16213e 100%);
+    color: white;
+    padding: 40px 48px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    color: white;
+    border: none;
+    margin-top: 0;
+    font-size: 1.4rem;
+  }
+  .cta-section p {
+    color: rgba(255,255,255,0.8);
+    max-width: 500px;
+    margin: 12px auto;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 16px;
+    border: none;
+    transition: background 0.2s;
+  }
+  .cta-btn:hover {
+    background: #1d4ed8;
+  }
+
+  /* Footer */
+  footer {
+    padding: 28px 48px;
+    text-align: center;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+  }
+  footer .brand {
+    font-weight: 700;
+    color: #0a1628;
+    font-size: 1.05rem;
+  }
+  footer .sub {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+  .nav a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 16px;
+    background: #16213e;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .nav a:hover {
+    background: #2563eb;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .hero { padding: 40px 24px; }
+    .hero h1 { font-size: 1.7rem; }
+    .content { padding: 32px 24px; }
+    .stats-row { grid-template-columns: 1fr; }
+    .author-bar { padding: 20px 24px; }
+    .cta-section { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">CONTAINER SECURITY DEEP DIVE</div>
+  <h1>82% Got Breached Through Containers.<br>Scanning Didn't Save Them.</h1>
+  <p class="hero-subtitle">Why "shift left" shifted the work — not the risk. And what actually works in 2026.</p>
+  <div class="hero-stat">
+    <span class="num">82%</span>
+    <span class="label">of organizations experienced at least<br>one container-related breach in 2025</span>
+  </div>
+</div>
+
+<!-- AUTHOR -->
+<div class="author-bar">
+  <div class="author-avatar">PA</div>
+  <div class="author-info">
+    <div class="name">Poojitha A S</div>
+    <div class="role">SRE &amp; DevOps Engineer &bull; DevOps Made Simple &bull; Article #79</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<p><strong>Here's the uncomfortable truth about container security in 2026:</strong></p>
+
+<p>100% of organizations say containers are critical to their production strategy.</p>
+<p>82% admit they've likely suffered a container-related breach in the past 12 months.</p>
+<p>And 90% are still pulling lightly modified images from public registries with minimal hardening.</p>
+
+<p>We told everyone to "shift left." They did. And they still got breached.</p>
+
+<p>What happened?</p>
+
+<h2>The Shift-Left Paradox</h2>
+
+<p>Shift left was supposed to solve this. Catch vulnerabilities early. Empower developers to build security into their code from the start.</p>
+
+<p>In practice, it shifted a mountain of undifferentiated remediation work onto already overextended engineering teams.</p>
+
+<p>Developers now run scanners. Scanners produce reports. Reports list hundreds of CVEs. Most CVEs are in dependencies three layers deep. The developer didn't write the code. The developer can't fix the code. The developer closes the ticket.</p>
+
+<p>This isn't security. It's theater.</p>
+
+<div class="callout callout-red">
+<p><strong>The real number:</strong> 99% of what's inside your production container is code you didn't write. One image, 19,000 files, 700 binaries, 1,004 vulnerabilities. Only 1% is your business logic.</p>
+<p>You cannot scan your way out of a supply chain problem.</p>
+</div>
+
+<h2>Why Scanning Alone Fails</h2>
+
+<p>Image scanning is necessary. It's not sufficient.</p>
+
+<p>Here's why:</p>
+
+<h3>1. Scanners Find Known Vulnerabilities. Attackers Use Unknown Ones.</h3>
+<p>CVE databases are reactive. A vulnerability exists for an average of 15 days before it gets cataloged. During that window, your scanner reports "all clear" while the exploit is live in your image.</p>
+
+<h3>2. 90% of CVEs in Container Images Are Noise</h3>
+<p>Most flagged CVEs are in packages your application never calls. They're present in the base image, unused at runtime. But your scanner treats them all equally. Your team wastes time triaging hundreds of CVEs that cannot be exploited in your context.</p>
+
+<h3>3. Scanning Doesn't Detect Tampering</h3>
+<p>If someone compromises your build pipeline and injects a backdoor, the resulting image won't trigger a CVE scan. The backdoor isn't a known vulnerability. It's intentional malicious code. The scanner gives it a clean bill of health.</p>
+
+<h3>4. The Base Image Problem</h3>
+<p>Most teams start with a community base image — <code>ubuntu:22.04</code>, <code>node:18</code>, <code>python:3.11</code>. These images include shells, package managers, debugging tools, and thousands of packages your application never uses.</p>
+
+<p>Each unnecessary package is attack surface. Each unused tool is a potential exploit path. Each included shell is an attacker's entry point.</p>
+
+<div class="stats-row">
+  <div class="stat-card">
+    <span class="stat-num">82%</span>
+    <span class="stat-label">Breached through containers</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-num">99%</span>
+    <span class="stat-label">Third-party code in images</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-num">90%</span>
+    <span class="stat-label">Still use unhardened images</span>
+  </div>
+</div>
+
+<h2>The Attack Chain Nobody Talks About</h2>
+
+<p>Traditional thinking: attackers break into running containers.</p>
+<p><strong>2026 reality: attackers compromise what goes INTO containers.</strong></p>
+
+<div class="callout callout-dark">
+<p><strong>Stage 1:</strong> Attacker compromises a popular open-source dependency.</p>
+<p><strong>Stage 2:</strong> Your CI pipeline pulls the compromised version during build.</p>
+<p><strong>Stage 3:</strong> Your image scanner sees no CVE (because there isn't one — it's a deliberate backdoor).</p>
+<p><strong>Stage 4:</strong> Your pipeline signs and deploys the image as "trusted."</p>
+<p><strong>Stage 5:</strong> Malicious code runs in production. Your monitoring sees normal behavior.</p>
+<p><strong>Result:</strong> Your own pipeline deployed the attack. Your own trust model blessed it.</p>
+</div>
+
+<p>This is what happened with the GitHub Actions compromise that hit 23,000 repositories in January 2026. A popular GitHub Action was compromised in a supply chain attack. Teams that used it unknowingly ran malicious code in their trusted CI pipelines.</p>
+
+<p>No scanner caught it. No policy blocked it. The trust chain itself was compromised.</p>
+
+<h2>What Actually Works</h2>
+
+<p>If scanning isn't enough, what is? Five layers of defense — from build to runtime.</p>
+
+<h3>Layer 1: Start With Hardened Base Images</h3>
+
+<p>The single highest-impact change you can make: replace community base images with hardened, minimal alternatives.</p>
+
+<p>A hardened base image strips out everything your application doesn't need. No shell. No package manager. No debugging tools. Minimal attack surface.</p>
+
+<table class="comparison">
+<tr>
+  <th>Property</th>
+  <th>Standard ubuntu:22.04</th>
+  <th>Hardened Minimal Image</th>
+</tr>
+<tr>
+  <td>Packages installed</td>
+  <td>300+</td>
+  <td>10-30</td>
+</tr>
+<tr>
+  <td>Known CVEs</td>
+  <td>50-200+</td>
+  <td>0-5</td>
+</tr>
+<tr>
+  <td>Shell access</td>
+  <td><span class="tag-no">Yes (attack vector)</span></td>
+  <td><span class="tag-yes">No (eliminated)</span></td>
+</tr>
+<tr>
+  <td>Image size</td>
+  <td>~77 MB</td>
+  <td>~15 MB</td>
+</tr>
+<tr>
+  <td>Attack surface</td>
+  <td>Large</td>
+  <td>Minimal</td>
+</tr>
+<tr>
+  <td>SBOM included</td>
+  <td><span class="tag-no">No</span></td>
+  <td><span class="tag-yes">Yes</span></td>
+</tr>
+</table>
+
+<p>Options for hardened base images in 2026:</p>
+<ul>
+  <li><strong>Chainguard Images</strong> — Built on Wolfi (a Linux "undistro" designed for containers). Zero-CVE SLA. 2,000+ images. SLSA Level 3 provenance. Nightly rebuilds from source. The most comprehensive option.</li>
+  <li><strong>Google Distroless</strong> — Minimal images without shells or package managers. Well-established. Fewer image variants than Chainguard.</li>
+  <li><strong>Alpine-based custom builds</strong> — Smaller than Ubuntu/Debian. Requires manual hardening. Good for teams with strong internal expertise.</li>
+</ul>
+
+<p>77% of DevSecOps leaders trust curated catalogs more than public registries. But 90% still use public images. Close that gap. This week.</p>
+
+<h3>Layer 2: Sign Every Artifact</h3>
+
+<p>Every image that goes to production should be cryptographically signed. Every signature should be verified before deployment.</p>
+
+<p>The open standard for this is <strong>Sigstore</strong> — specifically <code>cosign</code> for container signing and verification.</p>
+
+<pre>
+# Sign an image after build
+cosign sign --yes my-registry.io/my-app:v1.2.3
+
+# Verify before deployment (in admission controller)
+cosign verify \
+  --certificate-identity=builder@my-org.iam.gserviceaccount.com \
+  --certificate-oidc-issuer=https://accounts.google.com \
+  my-registry.io/my-app:v1.2.3
+</pre>
+
+<p>With Cosign 2.0, keyless signing is the default. No key management overhead. Your CI identity (OIDC) becomes the signing credential.</p>
+
+<p><strong>The rule: if it's not signed, it doesn't ship.</strong></p>
+
+<p>Combine this with a Kubernetes admission controller (like Kyverno or OPA Gatekeeper) that rejects unsigned images at deploy time. Now your cluster enforces what your policy declares.</p>
+
+<h3>Layer 3: Enforce SLSA Provenance</h3>
+
+<p>Signing tells you WHO built the image. Provenance tells you HOW.</p>
+
+<p><strong>SLSA (Supply-chain Levels for Software Artifacts)</strong> is a framework for supply chain integrity. It defines levels of assurance:</p>
+
+<ul>
+  <li><strong>SLSA Level 1:</strong> Build process is documented.</li>
+  <li><strong>SLSA Level 2:</strong> Build runs on a hosted service with provenance generated automatically.</li>
+  <li><strong>SLSA Level 3:</strong> Build environment is hardened. Provenance is non-falsifiable. Source is version-controlled.</li>
+</ul>
+
+<p>At Level 3, you can trace any production artifact back to: the exact source commit, the build system that built it, the environment it was built in, and every dependency it includes.</p>
+
+<p>If someone tampers with the build, the provenance breaks. The artifact gets rejected.</p>
+
+<p>This is how you break the supply chain attack cycle. Not by scanning outputs, but by verifying the entire chain from source to runtime.</p>
+
+<h3>Layer 4: Generate and Ship SBOMs</h3>
+
+<p>A <strong>Software Bill of Materials (SBOM)</strong> is an ingredient list for your container. Every package. Every library. Every version.</p>
+
+<p>Without an SBOM, when the next Log4j happens, you have no way to know which of your containers are affected without scanning every single one. With SBOMs, you query a database and get answers in seconds.</p>
+
+<p>Generate SBOMs in your CI pipeline. Store them alongside your images. Make them queryable. When the next zero-day drops, your response time goes from days to minutes.</p>
+
+<p>Tools: <strong>Syft</strong> (by Anchore) for generation. <strong>Grype</strong> for SBOM-based vulnerability matching. Sign your SBOMs with cosign too.</p>
+
+<h3>Layer 5: Runtime Behavioral Analysis</h3>
+
+<p>Layers 1–4 harden the supply chain. Layer 5 catches what slips through.</p>
+
+<p>Runtime security monitors what containers actually DO — not what they contain. If a container that normally serves HTTP suddenly opens a shell, that's an anomaly. If a process reads /etc/shadow when it never has before, that's a signal.</p>
+
+<p>Tools like <strong>Falco</strong> (CNCF Graduated project) use eBPF to monitor kernel-level events inside containers with near-zero overhead. Rules detect unexpected behavior in real time.</p>
+
+<p>This is your last line of defense. Everything else can be bypassed. Behavioral anomalies are hard to fake.</p>
+
+<h2>The 5-Day Action Plan</h2>
+
+<div class="step-card">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <h3>Audit Your Base Images</h3>
+    <p>Run <code>docker image ls</code> across all environments. How many use <code>ubuntu</code>, <code>debian</code>, <code>node</code>, <code>python</code> base images? List them. This is your attack surface inventory.</p>
+  </div>
+</div>
+<div class="step-card">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <h3>Replace One Base Image With a Hardened Alternative</h3>
+    <p>Pick your most-deployed image. Swap the base to a Chainguard Image, Distroless, or a custom Alpine build. Test in staging. Measure the CVE difference. It will be dramatic.</p>
+  </div>
+</div>
+<div class="step-card">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <h3>Enable Image Signing</h3>
+    <p>Add <code>cosign sign</code> to your CI pipeline. Keyless mode with OIDC makes this a 5-minute setup. Every image that exits your pipeline should be signed from today forward.</p>
+  </div>
+</div>
+<div class="step-card">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <h3>Block Unsigned Images in Your Cluster</h3>
+    <p>Deploy a Kyverno or Gatekeeper policy that rejects any image without a valid cosign signature. This single policy prevents the entire class of "unauthorized image" attacks.</p>
+  </div>
+</div>
+<div class="step-card">
+  <div class="step-num">5</div>
+  <div class="step-content">
+    <h3>Generate SBOMs and Baseline Runtime Behavior</h3>
+    <p>Add Syft to your pipeline for SBOMs. Deploy Falco for runtime detection. You now have visibility from build to production.</p>
+  </div>
+</div>
+
+<div class="callout callout-green">
+<p><strong>Expected result:</strong> Teams that adopt hardened base images report a 60–99% reduction in CVEs. Teams that implement artifact signing and SLSA provenance eliminate the entire class of supply chain tampering attacks. Teams that add runtime behavioral analysis detect novel threats that no scanner could catch.</p>
+<p>This isn't theory. This is what the 18% of teams that DIDN'T get breached are doing.</p>
+</div>
+
+<h2>The Bigger Picture</h2>
+
+<p>Container security isn't a scanning problem. It's a supply chain problem.</p>
+
+<p>Scanning finds symptoms. Hardened images eliminate causes. Signing proves integrity. Provenance ensures trust. Runtime analysis catches what you missed.</p>
+
+<p>The 82% breach rate won't drop because we buy more scanners. It will drop when we stop trusting code we didn't verify, images we didn't harden, and pipelines we didn't secure.</p>
+
+<p>Shift left was the right idea. But it shifted the work without shifting the approach.</p>
+
+<p>The approach that works: <strong>start with a secure foundation, prove everything, trust nothing.</strong></p>
+
+<p>That's not paranoia. That's engineering.</p>
+
+<p>Start the audit today. Harden one image. Sign one artifact. You'll never go back.</p>
+
+<div class="tags">
+  <span class="tag">#ContainerSecurity</span>
+  <span class="tag">#SupplyChainSecurity</span>
+  <span class="tag">#DevSecOps</span>
+  <span class="tag">#Kubernetes</span>
+  <span class="tag">#SRE</span>
+  <span class="tag">#Sigstore</span>
+  <span class="tag">#SLSA</span>
+  <span class="tag">#SBOM</span>
+</div>
+
+</div><!-- /content -->
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Your Containers Are Only As Secure As Your Supply Chain</h2>
+  <p>Every week, DevOps Made Simple breaks down complex infrastructure into clear, actionable guides. Subscribe for the next deep-dive.</p>
+  <a href="https://www.linkedin.com/newsletters/devops-made-simple-7325920235394347010/" class="cta-btn" target="_blank">Subscribe to DevOps Made Simple</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="brand">DevOps Made Simple</p>
+  <p class="sub">By Poojitha A S &bull; Making complex systems simple, one article at a time.</p>
+  <div class="nav" style="margin-top:15px">
+    <a href="00_INDEX.html">All Articles</a>
+    <a href="https://www.linkedin.com/pulse/82-got-breached-through-containers-scanning-didnt-save-poojitha-a-s" target="_blank">View on LinkedIn</a>
+  </div>
+</footer>
+
+</div><!-- /container -->
+
+</body>
+</html>

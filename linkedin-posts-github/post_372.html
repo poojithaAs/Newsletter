@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 373 &middot; November 19, 2024 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">373 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_371.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_373.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">November 19, 2024</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p><span class="hashtag">#Day100</span> Setting Up High Availability in Kubernetes: How Many Master Nodes? High availability (HA) in Kubernetes ensures your cluster operates even during failures. The number of master nodes is critical for achieving HA. How Many Master Nodes Do You Need?</p>
+<p class="numbered-item">1. Single Master Node</p>
+<p class="bullet-item">• Use Case: Development or testing environments.</p>
+<p class="bullet-item">• Pros: Simple and cost-effective.</p>
+<p class="bullet-item">• Cons: No fault tolerance; failure causes cluster downtime.</p>
+<p class="numbered-item">2. Three Master Nodes (Recommended for HA)</p>
+<p class="bullet-item">• Use Case: Production environments needing resilience.</p>
+<p class="bullet-item">• Why Three?</p>
+<p class="bullet-item">• Ensures etcd quorum with majority voting.</p>
+<p class="bullet-item">• Tolerates failure of one node while staying operational.</p>
+<p class="numbered-item">3. Five Master Nodes</p>
+<p class="bullet-item">• Use Case: Large-scale production setups.</p>
+<p class="bullet-item">• Why Five?</p>
+<p class="bullet-item">• Tolerates up to two node failures.</p>
+<p class="bullet-item">• Higher cost and complexity but adds reliability. Steps for Three-Master Node Setup</p>
+<p class="numbered-item">1. Infrastructure:</p>
+<p class="bullet-item">• Deploy across zones or data centers.</p>
+<p class="bullet-item">• Use a load balancer to route traffic to API servers.</p>
+<p class="numbered-item">2. Configuration:</p>
+<p class="bullet-item">• First Master: Initialize with kubeadm init.</p>
+<p class="bullet-item">• Additional Masters: Join using kubeadm join with control plane flags.</p>
+<p class="bullet-item">• etcd Cluster: Ensure all master nodes run etcd in a clustered configuration.</p>
+<p class="bullet-item">• Load Balancer: Use HAProxy, MetalLB, or cloud-based options for high availability.</p>
+<p class="numbered-item">3. Optional: Allow pod scheduling on master nodes: kubectl taint nodes &lt;master&gt; <a href="https://lnkd.in/gy4_AkyP" target="_blank" rel="noopener">https://lnkd.in/gy4_AkyP</a> Key Points</p>
+<p class="bullet-item">• Always use odd numbers (3, 5) for etcd quorum.</p>
+<p class="bullet-item">• Regularly back up etcd and monitor nodes.</p>
+<p class="bullet-item">• Plan r</p>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7264444905270181888/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_371.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_373.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

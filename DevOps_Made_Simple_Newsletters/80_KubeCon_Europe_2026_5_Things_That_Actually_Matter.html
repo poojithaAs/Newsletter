@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KubeCon Europe 2026: 5 Things That Actually Matter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0a1628;
+            color: #e5e7eb;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: rgba(10, 22, 40, 0.95);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section with CSS-only graphics */
+        .hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 50%, #2563eb 100%);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Decorative dot grid overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle, rgba(37, 99, 235, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0;
+            pointer-events: none;
+        }
+
+        /* Animated accent shapes */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: #93c5fd;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ff6b6b;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #d1d5db;
+            margin-top: 0.5rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Article Meta */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2563eb, #ff6b6b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+
+        .author-info h3 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .content-section h3 {
+            font-size: 1.3rem;
+            color: #93c5fd;
+            margin: 1.5rem 0 1rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .content-section p {
+            color: #d1d5db;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background-color: rgba(30, 58, 95, 0.5);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            border-color: #2563eb;
+            background-color: rgba(30, 58, 95, 0.8);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.15);
+        }
+
+        .section-card-title {
+            color: #60a5fa;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-card p {
+            margin-bottom: 0.75rem;
+        }
+
+        .section-card ul {
+            margin-left: 1.5rem;
+        }
+
+        .section-card li {
+            color: #d1d5db;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Highlight boxes */
+        .insight-box {
+            background-color: rgba(37, 99, 235, 0.15);
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .insight-box p {
+            color: #93c5fd;
+        }
+
+        .warning-box {
+            background-color: rgba(255, 107, 107, 0.15);
+            border-left: 4px solid #ff6b6b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box p {
+            color: #fca5a5;
+        }
+
+        /* Tags Section */
+        .tags-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: rgba(37, 99, 235, 0.3);
+            border-color: #2563eb;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0a1628 100%);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+
+        .cta-section p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(10, 22, 40, 0.95);
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        .footer-copyright {
+            color: #6b7280;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">DevOps Made Simple</div>
+            <nav>
+                <a href="00_INDEX.html">Newsletter Index</a>
+                <a href="https://linkedin.com/in/poojitha-as" target="_blank">LinkedIn</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">Article #80</span>
+            <h1>KubeCon EU 2026</h1>
+            <p class="hero-subtitle">224 Sessions. 5 That Matter.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Days Until KubeCon</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">224</div>
+                    <div class="stat-label">Total Sessions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12K+</div>
+                    <div class="stat-label">Attendees</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <article>
+            <div class="article-meta">
+                <div class="author-avatar">PA</div>
+                <div class="author-info">
+                    <h3>Poojitha A S</h3>
+                    <p>SRE & DevOps Engineer</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <h2>The Signal Through the Noise</h2>
+                <p>KubeCon Europe 2026 starts in 6 days. 224 sessions. 12,000 attendees. 10+ tracks. Most of it won't change how you work. These 5 things will.</p>
+                <p>Your time at KubeCon is finite. Your FOMO is infinite. This is your battleplan.</p>
+            </section>
+
+            <section class="content-section">
+                <h3>1. AI Gets Its Own Track (First-Ever Agentics Day)</h3>
+                <div class="section-card">
+                    <p class="section-card-title">The Most Significant Addition to the Program</p>
+                    <p>For the first time, KubeCon is giving AI agents their own dedicated track. Not "AI in Cloud Native." Not "LLM architectures." But AI agents as first-class citizens in Kubernetes.</p>
+                    <p>Here's why this matters for your team:</p>
+                    <ul>
+                        <li><strong>AI agents need different resource models:</strong> They're not batch jobs. They're not stateless services. They're long-running, resource-hungry, and unpredictably expensive.</li>
+                        <li><strong>RBAC and quotas break:</strong> Your current permissions model assumes human intent. AI agents operate at scale. You'll need agent-aware RBAC.</li>
+                        <li><strong>Observability is different:</strong> Tracing a query through a neural network in Kubernetes is not the same as tracing a request through microservices.</li>
+                    </ul>
+                    <p><strong>Action:</strong> Block Agentics Day sessions. Bring one person from platform engineering. You'll need policy changes before your team runs AI workloads on K8s.</p>
+                </div>
+                <div class="insight-box">
+                    <p>The infrastructure/AI convergence is not theoretical. Every major vendor shipping agent products for K8s (Datadog, Elastic, Grafana, PagerDuty) is here pitching why their monitoring works differently for agents.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>2. Prometheus V3 Is Coming</h3>
+                <div class="section-card">
+                    <p class="section-card-title">Your Monitoring Will Change</p>
+                    <p>Prometheus 3.0 isn't a patch. It's a major version bump with significant architectural changes that affect how you collect, store, and query metrics.</p>
+                    <ul>
+                        <li><strong>OpenTelemetry integration is native:</strong> Prometheus 2 bolted on OTel. V3 builds it in from the foundation. Your YAML configs will change.</li>
+                        <li><strong>Storage format improvements:</strong> Better compression. Faster queries. But migrations are involved.</li>
+                        <li><strong>Breaking changes:</strong> Some PromQL query patterns will need rewrites. If you're using Prometheus as a primary metrics store for 5+ years, you have debt to address.</li>
+                    </ul>
+                    <p><strong>Action:</strong> Find sessions on Prometheus 3.0 migration. Document your current PromQL queries. Start migration planning now—not after V3 is released.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>3. Platform Engineering Takes Center Stage</h3>
+                <div class="section-card">
+                    <p class="section-card-title">90% of Enterprises Now Have Platform Teams</p>
+                    <p>Platform engineering is no longer a startup thing. 90% of enterprises have dedicated platform teams. The session schedule reflects this: golden paths, IDPs, and developer experience are topics with their own dedicated blocks.</p>
+                    <ul>
+                        <li><strong>Internal Developer Platforms (IDPs) maturity:</strong> The market moved from "do we need this?" to "which product do we buy?" Platforms like Humanitec, Roadie, and Platformatory are mature.</li>
+                        <li><strong>Golden paths standardization:</strong> The industry is converging on best practices for how to structure developer experience without adding chaos.</li>
+                        <li><strong>Cost governance in platforms:</strong> Platform teams are learning that wrapping Kubernetes isn't enough. You need cost policies baked in.</li>
+                    </ul>
+                    <p><strong>Action:</strong> If you don't have a platform team, sessions here will convince leadership. If you do, bring your platform lead to sessions on IDP maturity and cost governance.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>4. OpenTelemetry's Graduation Push</h3>
+                <div class="section-card">
+                    <p class="section-card-title">OTel Is Becoming Cloud Native Standard</p>
+                    <p>OpenTelemetry is pursuing CNCF Graduated status. This is significant because it means the CNCF is officially recognizing OTel as a foundational standard, not an emerging technology.</p>
+                    <ul>
+                        <li><strong>AI agent observability extensions:</strong> OTel now has specs for tracing AI agent behavior. This ties directly back to Agentics Day.</li>
+                        <li><strong>Vendor consolidation:</strong> Vendors who resisted OTel are adopting it. Your monitoring stack will converge around OTel as the standard transport layer.</li>
+                        <li><strong>Governance implications:</strong> As OTel matures, data portability becomes real. You can exit any vendor without losing observability infrastructure.</li>
+                    </ul>
+                    <p><strong>Action:</strong> If you're still on custom instrumentation, OTel is now the safe bet. Sessions here will show migration paths and vendor support.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>5. Container Security Gets Real (Open Source SecurityCon on Day 0)</h3>
+                <div class="section-card">
+                    <p class="section-card-title">82% Breach Rate. Security Is No Longer Optional.</p>
+                    <p>KubeCon added a dedicated Security Day (Day 0) featuring open-source security tools. The reason: 82% of container deployments have known vulnerabilities. This is the security reckoning everyone's been avoiding.</p>
+                    <ul>
+                        <li><strong>SLSA framework sessions:</strong> Supply chain security is the new baseline. SLSA (Supply-chain Levels for Software Artifacts) has become table stakes.</li>
+                        <li><strong>Sigstore maturity:</strong> Code signing and verification in Kubernetes is now standardized. Not optional.</li>
+                        <li><strong>AI agent security:</strong> (Yes, again.) Securing AI workloads in Kubernetes has unique surface area. New tools and policies needed.</li>
+                    </ul>
+                    <p><strong>Action:</strong> Attend SecurityCon. It's free. You need to know: Do you have image vulnerability scanning? Are you enforcing policies? Can you trace artifact provenance? If the answers are "no," your team is behind.</p>
+                </div>
+                <div class="warning-box">
+                    <p><strong>Real talk:</strong> If you skip security sessions at KubeCon, your next incident will involve auditors asking why you're running unsigned containers from public registries. Not hypothetical.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>The Convergence: AI + Kubernetes</h2>
+                <p>Every session we've covered points to one truth: The AI + Kubernetes convergence is not next year's problem. It's this year's problem. Infrastructure teams stop treating AI workloads as someone else's responsibility.</p>
+                <p>Six days. Three blocks to watch: Agentics Day, Platform Engineering sessions, and Security/OTel. One week after KubeCon, you'll need budget requests and policy changes ready. Start now.</p>
+            </section>
+
+            <section class="tags-section">
+                <span class="tag">#KubeCon</span>
+                <span class="tag">#Kubernetes</span>
+                <span class="tag">#CloudNative</span>
+                <span class="tag">#DevOps</span>
+                <span class="tag">#SRE</span>
+                <span class="tag">#PlatformEngineering</span>
+                <span class="tag">#AI</span>
+            </section>
+
+            <section class="cta-section">
+                <h3>Don't Miss the Recap</h3>
+                <p>KubeCon EU recap with practical takeaways coming next week. Follow DevOps Made Simple for real-time insights from the conference floor.</p>
+                <a href="https://linkedin.com/in/poojitha-as" class="cta-button" target="_blank">Follow on LinkedIn</a>
+            </section>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">DevOps Made Simple</div>
+            <div class="footer-links">
+                <a href="00_INDEX.html">Newsletter Index</a>
+                <a href="https://linkedin.com/in/poojitha-as" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copyright">© 2026 DevOps Made Simple. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+</html>

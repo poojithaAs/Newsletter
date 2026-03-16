@@ -1,0 +1,27 @@
+The SSL certificate expired at 3 AM on December 25th. Every customer saw a security warning. The on call engineer was asleep.
+#WeBrokeItTogether
+
+#SETUP
+Christmas morning. The support inbox exploded. "Your site is not secure" on every browser.
+
+Sara Baqla: "The cert expired. On Christmas."
+Poojitha A S: "When was it set to expire?"
+Sara Baqla: "December 25th. We got the warning email 30 days ago."
+Poojitha A S: "Who was supposed to renew it?"
+Sara Baqla: "The person who left the company in November."
+Poojitha A S: "And nobody picked up their responsibilities?"
+
+The cert warning email went to an inbox nobody checked. The person who owned it left. Their tasks were never reassigned.
+
+#FIX
+✓ Automate certificate renewal. Use cert manager or Let's Encrypt with auto renewal.
+✓ Alert on certificate expiry at 30, 14, and 7 days. To a channel, not a person.
+✓ Never tie critical tasks to a single person. Ownership must survive departures.
+✓ Audit all scheduled tasks when someone leaves. Every single one.
+
+#LESSON
+The cert was not the problem. The process was. When one person owns something and nobody knows, their departure becomes your next outage.
+
+Has your team ever had a cert expire at the worst possible time?
+
+#DevOps #SRE #Certificates

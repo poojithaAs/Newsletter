@@ -1,0 +1,18 @@
+Every vendor is shipping AI for incident response. PagerDuty. Datadog. Incident.io. Opsgenie.
+
+But here is the question nobody is asking: what should AI do first, and what should it never do alone?
+
+Get this wrong and AI becomes a liability. Get it right and your SRE team becomes 10x more strategic.
+
+In this week's DevOps Made Simple, I break down:
+
+✓ The Graded Autonomy Framework: 4 levels from "AI watches" to "AI acts"
+✓ What the biggest companies are doing with AI in incident response right now
+✓ Why jumping to full automation too fast is the fastest way to a career ending outage
+✓ The exact criteria for deciding what AI should handle versus what humans must own
+
+The companies getting this right are not replacing their SREs. They are freeing them from the repetitive stuff so they can do work that actually matters.
+
+What is your team doing with AI in incident response? I want to hear about it.
+
+#DevOps #SRE #AI #DevOpsMadeSimple

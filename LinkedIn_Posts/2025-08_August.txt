@@ -1,0 +1,73 @@
+LinkedIn Posts - 2025-08 (August)
+Total posts: 23
+================================================================================
+
+===POST_125=== DATE:2025-08-30
+ID:7367429732100997122 What about you—what's your mindset when it comes to rejection and opportunity?
+
+===POST_126=== DATE:2025-08-29
+ID:7367268682370056192 Episode 29 is live
+
+===POST_127=== DATE:2025-08-29
+ID:7367008685878865921 Skills come and go. But the way you learn compounds forever. I"ll start For me → Watching videos at 2x speed. It sharpens focus and saves hours. What's the one learning habit, book, or method that's given you an edge? Curious to hear yours. Aly Ibrahim Samantha St-Louis, MVP, MCT, RN, BN, Danny Thompson Damian Igbe, PhD Priyanka Tolia Sammy Cheung #Learning #Upskilling #AtomicHabits #CareerGrowth
+
+===POST_128=== DATE:2025-08-25
+ID:7365748391839956993 At C3, we believe learning is most powerful when done together. This week, we hosted an AI for Beginners workshop, led by Poojitha A S, who guided the community through the basics of AI in a simple, approachable way. The session covered: What AI is and how it has evolved How machine learning works in three simple stages: training, learning, inference How ChatGPT was trained using supervised learning and human feedback Tokens & temperature—the building blocks and creativity dial of AI Practical ways AI can support daily life: resumes, study, planning, and creativity The heart of C3 remains the same: creating a safe, supportive space where women can ask, learn, and grow without judgment. This workshop was another step in turning curiosity into confidence. #C3Women #Community #AI #LearningTogether
+
+===POST_129=== DATE:2025-08-25
+ID:7365741278564659200 New Edition is live
+
+===POST_130=== DATE:2025-08-20
+ID:7363925671590457346 New Edition is Live: "Google Gemini Meets Oracle Cloud" Google's most advanced AI models are now on OCI—bringing AI as infrastructure and making multi-cloud a reality.
+
+===POST_131=== DATE:2025-08-20
+ID:7363766732869570562 A Night of Cloud – Dallas Software Developers Group Meetup Tonight, I had the honor of sharing the stage with three incredible speakers at the Dallas Developers Meetup. Huge thanks to Danny Thompson for organizing and to Yum! Brands and DotLabs for sponsoring and supporting this community. Here's how the night flowed: Rishab Kumar kicked us off with a powerful demo on Google Cloud Run, showing how fast and cost-effective serverless deployments can be. I(Poojitha A S )presented on AI as a Service (AIaaS) — what it is, why it matters, and how it saves companies time, money, and security while also raising challenges around governance and compliance. Suresh A M dove into Data Governance, breaking it down with practical analogies (like renovating a house!) and showing why classification, policies, and compliance matter for every organization. Noah Jenkins closed the evening with an insightful talk on Identity & Access Management (IAM) — highlighting risks like "permission creep" and how automation + zero trust can prevent million-dollar breaches. Big takeaway from the night: Cloud isn't just about tools — it's about making systems scalable, secure, and human-friendly. Grateful to be part of this vibrant Dallas developer community, where knowledge flows freely and everyone walks away a little smarter than they came in. #DallasDevelopers #Cloud #AI #DataGovernance #IAM #DevOps #Community
+
+===POST_132=== DATE:2025-08-18
+ID:7363207484657819648 Thriving Through Layoffs : C3 Workshop Recap By C3 Women Only | #WomenInTech #CareerGrowth #Layoffs #Resilience Last Thursday, our C3 community came together for one of our most powerful sessions yet : Thriving Through Layoffs. This wasn't just about motivation — it was about real stories, real setbacks, and real solutions. Pallavi's Journey "The day I lost my job, I was in shock. For days, I couldn't speak without tears. But as a mom, I knew I had to step up." From that turning point, Pallavi: • Built a 6-month financial survival plan with her kids involved. • Upskilled in the latest technologies to strengthen her profile. • Switched from mass job applications to targeted, tailored applications with referrals. • Showed up consistently , posting on LinkedIn, attending meetups, and networking with purpose. The first 4 months brought zero interviews. But she didn't stop. Eventually, she had two offers in hand , including her dream role as Guidewire QA Director Monica's Mortgage Advice Monica shared how to navigate mortgage payments during uncertain times: • Call your lender early : don't wait to miss a payment. • Ask about hardship programs and temporary relief options. • Protect your credit and avoid foreclosure through proactive communication. The Q&A That Changed the Room The conversation opened up :women shared their own challenges: • How to start fresh in tech after years in manual testing. • How to bridge a long career gap in the U.S. job market. • Why market trends point towards DevOps, cloud, and container orchestration skills. • How to find mentors (or be one) through meetups, LinkedIn, and open-source contributions. • Resume tailoring strategies ,match your profile to the job description, aim for 85%+ ATS match, and focus on quality over quantity in applications. We left with practical reminders: ✅ You can rebuild, even after months without interviews. ✅ Networking isn't about asking for a job — it's about building trust. ✅ Market conditions are temporary; your skills and persistence are long-term assets. At C3, we believe you don't have to navigate career transitions alone. Our Thursday workshops are a safe, no-promotion space to share, learn, and lift each other up. #C3WomenOnly #WomenInTech #CareerTransition #JobSearch #Layoffs #Resilience #Networking
+
+===POST_133=== DATE:2025-08-18
+ID:7363200621975392259 New Edition is Live! This week's drop: MCP – The USB-C of AI Connections How one simple protocol is cutting out messy integrations and making AI + DevOps work like plug-and-play.
+
+===POST_134=== DATE:2025-08-15
+ID:7362065099454361602 MCP's 5 Foundational Features – What They Mean in Practice Roots – Think of these as the "safe zones" your AI can access. Defining roots ensures AI can't wander into sensitive files or systems, even by accident. Sampling – Allows controlled, limited access to certain capabilities so you can test or fine-tune without giving full permissions right away. Prompt – Standardizes instructions so outputs are predictable and repeatable, making it easier to debug or scale AI workflows. Resources – Lets you securely share files, APIs, or datasets in a read-only way—perfect for reference materials without risking edits or deletions. Tools – Gives AI specific capabilities (e.g., run a script, call an API) but only within the guardrails you define. See how to configure each one hands-on with MCP for Beginners Course by KodeKloud: https://kode.wiki/4lwMRvc
+
+===POST_135=== DATE:2025-08-14
+ID:7361872305653731329 Thank you, Danny Thompson! Grateful for the opportunity to be part of A Night of JavaScript on August 19th, hosted by the Dallas Software Developers Meetup. I'll be speaking on "AI as a Service" When: August 19, 2025 register: https://lnkd.in/gFk8SGYp Excited to learn alongside amazing speakers: Rishab Kumar – Staff Developer Evangelist, Twilio Suresh A M – Data Architect, Hitachi Noah Jenkins – Cloud Engineer, Middleby
+
+===POST_136=== DATE:2025-08-13
+ID:7361388643338371075 New edition of DevOps Made Simple is live! This week: AI as a Service :how to plug AI into your apps instantly without building or training models yourself.
+
+===POST_137=== DATE:2025-08-12
+ID:7361124514266583040 Hosting Women-Only Workshops with C3 Every Thursday (7:00 – 8:30 PM CST), we host interactive, free workshops for women — covering career growth, networking, and real-life challenges like layoffs, interviews, and building confidence. August Topics: Thriving Through Layoffs (with guest speakers) Mastering Behavioral Interview Questions Building Your Network with Confidence …and more. This Week: Thriving Through Layoffs (Women Only) Layoffs are tough — emotionally, professionally, and personally. This Thursday, we'll share real experiences and practical strategies to move forward with confidence. What's inside: Pallavi's layoff journey & resilience tips Monika's mortgage advice during tough times Anonymous Q&A on your biggest challenges Networking that works (plus scripts you can use now) Resource & job lead swap Thursday, 14th August 2025 7:00 – 8:30 PM https://lnkd.in/g4gem_5M This is just one of our every-Thursday workshops — each one is practical, supportive, and free for women looking to grow and connect. Follow C3 Women Only so you never miss what's next.
+
+===POST_138=== DATE:2025-08-11
+ID:7360663816226959360 New edition is live! AI in SRE : how to cut alert noise, speed up triage, and take the pain out of on-call.
+
+===POST_139=== DATE:2025-08-08
+ID:7359576653028626433 New edition is live How Google really runs production: planet-scale, no magic, just engineering.
+
+===POST_140=== DATE:2025-08-08
+ID:7359574524121550848 New Edition is live Check out the full newsletter for the complete breakdown.
+
+===POST_141=== DATE:2025-08-07
+ID:7359367303248928769 Today, I stepped up to the mic : not for a speech, but to represent myself. MYN Texas Career Fair, Globe Life Field I didn't just go to today's job fair to find a job. I went to learn, listen, and see where the industry is headed. From speaking with recruiters to exploring companies I'd never heard of, it was a reminder that career growth isn't only about applying — it's about building relationships and staying curious. With 9 years of experience in DevOps/SRE, Kubernetes, and automation, I'm always looking for ways to contribute to meaningful work, whether that's through a full-time role, a project, or community collaboration. If we met today, I'd love to continue the conversation. If we didn't, my inbox is open — let's connect. DevOps Engineer | SRE | Kubernetes | Cloud Automation
+
+===POST_142=== DATE:2025-08-07
+ID:7359242516602187776 "Is AIOps replacing DevOps?" Short answer: No. Long answer: Let me tell you a story… What even is AIOps? Think of AIOps (Artificial Intelligence for IT Ops) as your DevOps setup : but now it's got • machine learning, • big data crunching, • and pattern-spotting superpowers. It helps with: • catching incidents before they escalate • figuring out why things broke (root cause) • filtering out noise from 500+ alerts • and yes, giving "predictive insights" that sound cooler than they are But here's the talk: AIOps is not a magic wand. It works only when you've already built a solid DevOps foundation. Otherwise? It's like putting autopilot in a car with no wheels. You still need: • Git, CI/CD, Terraform, K8s, monitoring basics • Strong team culture • Clean logs (not 400 lines of "it works on my machine") Why it matters: AIOps enhances DevOps. It's not here to take over. It helps scale, reduce noise, and speed up action. But without proper pipelines and good hygiene, it has nothing to learn from. Even the big guys agree: Gartner says AIOps is "complementary." AWS and GCP say it's part of the observability layer, not a DevOps replacement. In short: You feed it good DevOps, it gives you smart alerts. So next time someone asks, "How do I start learning AIOps?" Tell them: "Same way you learn AIOps' older sibling — DevOps. Build the basics, and AIOps will follow." And if they ask for a shortcut… Send them the meme. #DevOpsBeforeAIOps #HumanOps #SRELife #InfraHumor #BuildBeforeYouAutomate
+
+===POST_143=== DATE:2025-08-06
+ID:7358852043182149634 "You don't need a job to have a LinkedIn You need a voice." Last night, we gathered for a C3 Women Learning Circle on LinkedIn Basics. What started as a tutorial became something much deeper. A group of women, some creating their profiles for the very first time, came together with open hearts and honest questions. No pressure. No pretense. Just the courage to begin. Here's what we learned: LinkedIn isn't just for jobseekers. It's for women who want to be seen, heard, and connected. Your headline isn't your job title. It's your truth. Make it reflect you. "Frisco" or "Dallas Fort Worth"? Small tweaks matter. You deserve to be discoverable. You don't need Premium. You don't need perfect. You just need to start. You can quietly say "open to work" and only recruiters will know. Privacy respected. Power retained. We asked about banners, badges, business titles, and what to do if you're just starting over. And through it all, we reminded each other: You're not behind. You're just beginning. A huge thank you to Priyanka Tolia who shared her time, experience, and screen with so much clarity and compassion. You made it easy. You made it feel safe. And our deepest gratitude to MERCY STRICKLAND for organizing this event and always holding space for women to learn, grow, and rise together. Your leadership is quiet but fierce. And we're all better because of it. To every woman who showed up — nervous, curious, quietly brave — you reminded us what true community looks like. We see you. We're with you. If you don't have a LinkedIn yet, this is your sign to create one. If you already have one, update it with heart. And don't forget to follow C3 Women Only on LinkedIn. Because we're just getting started and you belong in every room we enter. #C3Women #LinkedInForLife #BeginAnyway #WomenSupportingWomen #C3LearningCircle #AuthenticNetworking #YouBelongHere #LeadWithHeart
+
+===POST_144=== DATE:2025-08-06
+ID:7358851976152932352 The latest edition of DevOps Made Simple is now live Explore how security and reliability collide in real incidents and smart system design
+
+===POST_145=== DATE:2025-08-04
+ID:7358127113075388417 New Edition Live! DevOps Made Simple: Episode 21 :Organizational Change Management in SRE is out now. Dive into real Google case studies, proven frameworks, and lessons for leading change without burning out.
+
+===POST_146=== DATE:2025-08-01
+ID:7357099885587783681 We all want jobs that pay the bills. But how many of us do work that fills our soul? Read MERCY STRICKLAND it's not about titles or money. It's about showing up when no one else does. This is what it really means to lead with heart. Follow : C3 Women Read here : https://lnkd.in/ge55U6uT
+
+===POST_147=== DATE:2025-08-01
+ID:7357040006726602753 Interview Edition with MERCY STRICKLAND is now LIVE The woman behind C3. The quiet force holding space for thousands. If you've ever felt invisible If you've ever led without asking for credit If you believe empathy is the strongest kind of leadership This one's for you. Read the full interview:
+

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Cost Audit - 10 Minute Fix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0a1628;
+            color: #e5e7eb;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: rgba(10, 22, 40, 0.95);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section - Dramatic stat display */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0a1628 25%, #ff6b6b 100%);
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Vertical stripes accent pattern */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    transparent 30px,
+                    rgba(37, 99, 235, 0.08) 30px,
+                    rgba(37, 99, 235, 0.08) 60px
+                );
+            pointer-events: none;
+        }
+
+        /* Large gradient orb */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #86efac;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(34, 197, 94, 0.4);
+        }
+
+        .hero-stat {
+            font-size: clamp(3.5rem, 15vw, 6rem);
+            font-weight: 800;
+            color: #fff;
+            margin: 1rem 0;
+            line-height: 1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            color: #fca5a5;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .hero-cta-small {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            color: #d1d5db;
+            font-size: 0.95rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Article Meta */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b6b, #2563eb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+
+        .author-info h3 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #ff6b6b;
+        }
+
+        .content-section h3 {
+            font-size: 1.3rem;
+            color: #93c5fd;
+            margin: 1.5rem 0 1rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid #22c55e;
+        }
+
+        .content-section p {
+            color: #d1d5db;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Step Cards - Numbered */
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .step-card {
+            background-color: rgba(30, 58, 95, 0.6);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(255, 107, 107, 0.1);
+            line-height: 1;
+        }
+
+        .step-card:hover {
+            border-color: #22c55e;
+            background-color: rgba(30, 58, 95, 0.9);
+            box-shadow: 0 8px 16px rgba(34, 197, 94, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #22c55e;
+            color: #0a1628;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        /* Code blocks */
+        .code-block {
+            background-color: #0f172a;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #60a5fa;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        /* Callout boxes */
+        .insight-box {
+            background-color: rgba(37, 99, 235, 0.15);
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .insight-box p {
+            color: #93c5fd;
+        }
+
+        .warning-box {
+            background-color: rgba(255, 107, 107, 0.15);
+            border-left: 4px solid #ff6b6b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box p {
+            color: #fca5a5;
+        }
+
+        .success-box {
+            background-color: rgba(34, 197, 94, 0.15);
+            border-left: 4px solid #22c55e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .success-box p {
+            color: #86efac;
+        }
+
+        /* Stat cards */
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background-color: rgba(30, 58, 95, 0.5);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-card-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card-label {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        /* Tags Section */
+        .tags-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: rgba(37, 99, 235, 0.3);
+            border-color: #2563eb;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0a1628 100%);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+
+        .cta-section p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(10, 22, 40, 0.95);
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        .footer-copyright {
+            color: #6b7280;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2.5rem 1.5rem;
+                min-height: 400px;
+            }
+
+            .hero-stat {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .step-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">DevOps Made Simple</div>
+            <nav>
+                <a href="00_INDEX.html">Newsletter Index</a>
+                <a href="https://linkedin.com/in/poojitha-as" target="_blank">LinkedIn</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">Article #81</span>
+            <div class="hero-stat">68%</div>
+            <p class="hero-subtitle">of K8s Teams Overspend by 20–40%</p>
+            <p class="hero-cta-small">Your cluster is burning money right now. Here's the 10-minute fix.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <article>
+            <div class="article-meta">
+                <div class="author-avatar">PA</div>
+                <div class="author-info">
+                    <h3>Poojitha A S</h3>
+                    <p>SRE & DevOps Engineer | FinOps Specialist</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <h2>The Quiet Money Leak</h2>
+                <p>Your Kubernetes cluster is burning money right now. Not in a dramatic way. Not in a way that triggers alarms. In a quiet, 20–40% overspend way. 68% of teams have this problem.</p>
+                <p>This is not a scaling issue. This is not a capacity planning failure. This is negligence.</p>
+                <p>And I'm about to show you how to fix it in 10 minutes.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Why K8s Cost Waste Is Getting Worse</h2>
+                <p>Three years ago, Kubernetes cost waste looked like oversized node pools and idle stateful sets. You could spot the problems visually.</p>
+                <p>Then AI happened.</p>
+                <p>GPUs changed the equation. A100s cost $2–3/hour. V100s cost $1.50/hour. When you're running them at 10% utilization waiting for batch inference requests, you're hemorrhaging money.</p>
+                <p>Add to that:</p>
+                <ul>
+                    <li><strong>Development clusters running 24/7:</strong> No one turns them off on weekends. They cost 30% more than they should.</li>
+                    <li><strong>Reserved instances expiring:</strong> Teams buy 1-year RIs, forget about them, lose 20% discount when they renew.</li>
+                    <li><strong>Cross-team resource requests:</strong> Nobody knows who owns what. Zombie deployments run for months.</li>
+                    <li><strong>Monitoring and logging overhead:</strong> Shipping logs to every vendor doubles your egress costs.</li>
+                </ul>
+                <div class="warning-box">
+                    <p><strong>Real story:</strong> One SRE team found 3 A100 GPUs running continuously for 18 months under a "test" namespace. Cost: $47,000. They never checked.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>The 10-Minute Audit</h2>
+                <p>Five steps. Two minutes each. You'll find money leaks worth thousands.</p>
+
+                <div class="step-grid">
+                    <div class="step-card" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Check Resource Requests vs Actual Usage</div>
+                        <p>Your pod requests 2 CPUs and 4GB RAM. It uses 0.5 CPU and 200MB RAM. Multiply that across 500 pods and you're paying for 4x more than you need.</p>
+                    </div>
+
+                    <div class="step-card" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Find Zombie Deployments</div>
+                        <p>Deployments with 0 replicas still exist. Helm releases you forgot about. Stateful sets reserving resources.</p>
+                    </div>
+
+                    <div class="step-card" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Audit Node Pool Utilization</div>
+                        <p>GPU nodes running at 10% utilization. CPU-only nodes in a GPU cluster. Reserved capacity for peak traffic that never comes.</p>
+                    </div>
+
+                    <div class="step-card" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Check for Missing Autoscaling</div>
+                        <p>HPA (Horizontal Pod Autoscaling) disabled. Karpenter not installed. KEDA jobs running on static resources.</p>
+                    </div>
+
+                    <div class="step-card" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-title">Review Spot/Preemptible Usage</div>
+                        <p>Production running on on-demand. Non-critical jobs paying for guaranteed uptime. Savings: 60–90%.</p>
+                    </div>
+                </div>
+
+                <h3>Step-by-Step Walkthrough</h3>
+
+                <h3>Step 1: Resource Requests vs Actual Usage (2 minutes)</h3>
+                <div class="code-block">
+kubectl top pods --all-namespaces | head -20
+                </div>
+                <p>This shows actual CPU/memory usage. Now check what was requested:</p>
+                <div class="code-block">
+kubectl get pods --all-namespaces -o jsonpath='{range .items[*]}{.metadata.namespace}{"\t"}{.metadata.name}{"\t"}{.spec.containers[0].resources.requests}{"\n"}{end}' | head -20
+                </div>
+                <p>Compare the two. If requests are 5x actual usage, you found waste. Count how many pods have this issue. Multiply by your hourly node cost. That's money you're leaving on the table.</p>
+
+                <h3>Step 2: Zombie Deployments (2 minutes)</h3>
+                <div class="code-block">
+kubectl get deployments --all-namespaces | grep "0/0"
+                </div>
+                <p>Any deployment showing 0 desired replicas, 0 running replicas? Delete it. If you can't delete it (compliance), scale it to zero explicitly and set a reminder to remove it in 30 days.</p>
+                <div class="code-block">
+kubectl get ns --sort-by=.metadata.creationTimestamp | tail -10
+                </div>
+                <p>Check which namespaces were created recently. Are they still needed? Helm releases from 2 years ago still running? Time to clean house.</p>
+
+                <h3>Step 3: Node Pool Utilization (2 minutes)</h3>
+                <div class="code-block">
+kubectl describe nodes | grep -A 3 "Allocated resources"
+                </div>
+                <p>This shows what % of each node's CPU/memory is actually in use. If you see nodes at 15% utilization, you're paying for empty capacity. If you have GPU nodes, check nvidia-smi:</p>
+                <div class="code-block">
+kubectl exec -it <gpu-pod> -- nvidia-smi
+                </div>
+                <p>If GPU utilization is under 20%, you're wasting $20/day per GPU. NVIDIA MIG (Multi-Instance GPU) can save 85% on these workloads. Not configured? You're bleeding money.</p>
+
+                <h3>Step 4: Missing Autoscaling (2 minutes)</h3>
+                <div class="code-block">
+kubectl get hpa --all-namespaces
+kubectl get keda-scaledobjects --all-namespaces
+                </div>
+                <p>If these return empty, you don't have autoscaling. Batch jobs, background workers, and CI/CD nodes should scale to zero when idle. If they don't, add HPA or KEDA immediately.</p>
+
+                <h3>Step 5: Spot vs On-Demand (2 minutes)</h3>
+                <div class="code-block">
+kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.karpenter\.sh/capacity-type}{"\n"}{end}'
+                </div>
+                <p>Spot instances cost 60–90% less. Non-critical workloads (batch, logging, CI/CD) should run on spot by default. Production critical? Use on-demand. But be intentional. Right now you're probably defaulting to on-demand everywhere.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>What You'll Likely Find</h2>
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <div class="stat-card-value">30–50%</div>
+                        <div class="stat-card-label">Oversized Resource Requests</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-value">15–25%</div>
+                        <div class="stat-card-label">Idle GPU Nodes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-value">10–20%</div>
+                        <div class="stat-card-label">Zombie Deployments</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-value">0%</div>
+                        <div class="stat-card-label">Spot Instance Usage</div>
+                    </div>
+                </div>
+
+                <p>Add those together and you get the 20–40% overspend most teams experience. If your infrastructure bill is $500K/year, you're likely wasting $100–200K annually. That's not a rounding error.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Making Cost Discipline Stick</h2>
+                <p>One audit is good. Systemic change is better. Treat cost policies like you treat security policies:</p>
+                <ul>
+                    <li><strong>Resource request enforcement:</strong> Policy: all pods must define CPU and memory requests. Violations blocked by admission controller.</li>
+                    <li><strong>Autoscaling requirements:</strong> Batch jobs must have HPA or KEDA. No exceptions.</li>
+                    <li><strong>Spot-first strategy:</strong> Non-critical workloads default to spot. Opt-in to on-demand, don't opt-out.</li>
+                    <li><strong>Monthly cost reviews:</strong> Tie it to infrastructure metrics. Track trends. Alert on anomalies.</li>
+                    <li><strong>Cloud spend tagging:</strong> Allocate costs to teams. They'll police themselves.</li>
+                </ul>
+                <div class="success-box">
+                    <p><strong>Pro tip:</strong> Set up cost dashboards in your monitoring tool. Make team cost visibility automatic. When engineers see they're burning $5K/day on their cluster, requests drop magically.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Day 1–5 Action Plan</h2>
+                <ul>
+                    <li><strong>Day 1:</strong> Run the audit. Document findings in a spreadsheet. Identify top 5 waste sources.</li>
+                    <li><strong>Day 2–3:</strong> Kill zombie deployments. Resize resource requests for top 10 deployments.</li>
+                    <li><strong>Day 4:</strong> Propose GPU consolidation plan (NVIDIA MIG or dedicated inference clusters).</li>
+                    <li><strong>Day 5:</strong> Set up cost dashboards. Brief leadership on findings and savings potential.</li>
+                </ul>
+                <p>Expected savings: $2–5K/month in the first week. Compounding savings of 15–25% within 90 days.</p>
+            </section>
+
+            <section class="tags-section">
+                <span class="tag">#FinOps</span>
+                <span class="tag">#Kubernetes</span>
+                <span class="tag">#CloudCost</span>
+                <span class="tag">#DevOps</span>
+                <span class="tag">#SRE</span>
+                <span class="tag">#CostOptimization</span>
+            </section>
+
+            <section class="cta-section">
+                <h3>Full FinOps Playbook Coming Next Month</h3>
+                <p>This audit is the foundation. Next month's issue covers advanced cost governance, budget allocation, and cloud vendor negotiations. Subscribe now to get the complete playbook.</p>
+                <a href="https://linkedin.com/in/poojitha-as" class="cta-button" target="_blank">Follow for Full FinOps Playbook</a>
+            </section>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">DevOps Made Simple</div>
+            <div class="footer-links">
+                <a href="00_INDEX.html">Newsletter Index</a>
+                <a href="https://linkedin.com/in/poojitha-as" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copyright">© 2026 DevOps Made Simple. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+</html>

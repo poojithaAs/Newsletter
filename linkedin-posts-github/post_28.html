@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 29 &middot; February 18, 2026 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">29 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_27.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_29.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">February 18, 2026</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p><span class="hashtag">#WeBrokeItTogether</span> RAG Series Episode 021726 : The Invisible Manual The Setup: Users are furious. They keep asking the internal bot &quot;How do I reset my password?&quot;, and the bot keeps replying: &quot;I cannot find any information on that.&quot; Sara is staring at the database, pointing at a document that clearly explains the process.</p>
+<div class="dialogue">
+<p class="dialogue-line"><strong class="speaker">Sara Baqla (Dev):</strong> &quot;I&<span class="hashtag">#x27</span>;m switching us to a bigger model. Maybe the 100 billion parameter version.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S (DevOps):</strong> &quot;Budget says no. Also, why?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Because this model is blind! The &<span class="hashtag">#x27</span>;Password Reset&<span class="hashtag">#x27</span>; guide is right there, File <span class="hashtag">#402</span>, but the bot never sees it!&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Sara... what is the actual title of File <span class="hashtag">#402</span>?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Enterprise Identity Access Management &amp; Credential Rotation Protocols v4.2&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Right. And the user searched for &<span class="hashtag">#x27</span>;forgot password&<span class="hashtag">#x27</span>;.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;So? It&<span class="hashtag">#x27</span>;s an AI! It should know they are the same thing!&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Not if the vector search ranking is weak. &<span class="hashtag">#x27</span>;Credential Rotation&<span class="hashtag">#x27</span>; and &<span class="hashtag">#x27</span>;Forgot Password&<span class="hashtag">#x27</span>; are mathematically too far apart. The Retrieval step is failing before the AI even gets a chance to read the doc.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;So we rename the files?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;No, we fix the Ranking. We need to help the search engine understand that &<span class="hashtag">#x27</span>;Identity Access&<span class="hashtag">#x27</span>; implies &<span class="hashtag">#x27</span>;Login&<span class="hashtag">#x27</span>;.&quot;</p>
+</div>
+<h3 class="section-header">Fix: Poojitha didn&<span class="hashtag">#x27</span>;t buy a bigger model. Instead, she implemented Hybrid Search (combining Keyword search with Vector search) and added a metadata field for &quot;tags&quot; to the documents. They tagged the fancy file with: [&<span class="hashtag">#x27</span>;password&<span class="hashtag">#x27</span>;, &<span class="hashtag">#x27</span>;login&<span class="hashtag">#x27</span>;, &<span class="hashtag">#x27</span>;reset&<span class="hashtag">#x27</span>;, &<span class="hashtag">#x27</span>;help&<span class="hashtag">#x27</span>;].</h3>
+<h3 class="section-header">Result: The next time a user typed &quot;Help I can&<span class="hashtag">#x27</span>;t login,&quot; the search engine prioritized the &quot;Credential Rotation&quot; document because of the metadata tag, and the bot correctly answered. RAG Failure Point <span class="hashtag">#2</span>: Missing Top Ranked Documents. Vector search isn&<span class="hashtag">#x27</span>;t magic. If your corporate jargon doesn&<span class="hashtag">#x27</span>;t match user slang, the right document won&<span class="hashtag">#x27</span>;t make the cut. Optimize your indexing with metadata.</h3>
+<p><span class="hashtag">#DevOps</span> <span class="hashtag">#SRE</span> <span class="hashtag">#RAG</span> <span class="hashtag">#SWE</span> <span class="hashtag">#VectorDatabase</span></p>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7429679044818010113/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_27.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_29.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

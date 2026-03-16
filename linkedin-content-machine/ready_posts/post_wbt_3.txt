@@ -1,0 +1,30 @@
+A typo in a DNS record took down services in three countries for 4 hours. The fix took 30 seconds. The propagation took 4 hours.
+#WeBrokeItTogether
+
+#SETUP
+Monday morning. Routine DNS update to point to a new CDN endpoint.
+
+Sara Baqla: "I updated the CNAME record. Pointing to the new CDN."
+Poojitha A S: "Did it propagate?"
+Sara Baqla: "Checking... looks good from here."
+Poojitha A S: "Check from Europe."
+Sara Baqla: "Oh no."
+Poojitha A S: "What did you put?"
+Sara Baqla: "cdn.company.co instead of cdn.company.com"
+Poojitha A S: "And the TTL on that record?"
+Sara Baqla: "...14400 seconds."
+
+One missing letter. 4 hour TTL. Three countries dark.
+
+#FIX
+✓ Lower TTL before making DNS changes. Set it to 60 seconds the day before.
+✓ Always verify DNS from multiple regions before closing the ticket.
+✓ Use infrastructure as code for DNS. No manual edits.
+✓ Keep a rollback record ready before every change.
+
+#LESSON
+DNS mistakes are the only mistakes where the fix is instant but the recovery takes hours. Always lower TTL before touching a record.
+
+What is your worst DNS story? I know you have one.
+
+#DevOps #SRE #DNS

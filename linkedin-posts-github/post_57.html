@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 58 &middot; January 29, 2026 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">58 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_56.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_58.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">January 29, 2026</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p><span class="hashtag">#EPISODE2</span> THE LOG THAT ATE THE CLOUD We <span class="hashtag">#BrokeIt</span> Together</p>
+<div class="dialogue">
+<p class="dialogue-line"><strong class="speaker">Sara Baqla (<span class="hashtag">#Devloper</span>):</strong> &quot;I added some debug logs to track a payment issue.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S (<span class="hashtag">#Devops</span>/ <span class="hashtag">#SRE</span>):</strong> &quot;What are you logging?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;User ID, session ID, request metadata. Normal debug info.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;On every request? We&<span class="hashtag">#x27</span>;re around 45–50K RPS.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;The platform samples logs automatically… right?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;It does. I approved the PR assuming that was enough.&quot; <span class="hashtag">#BOTH</span>: &quot;Okay… let&<span class="hashtag">#x27</span>;s fix it together .&quot; WHAT ACTUALLY HAPPENED 10:18 : Deploy goes out. Canary at 15% traffic looks healthy. 10:24 : Datadog shows log volume climbing. Alert fires (Slack). 10:27 : Alert acknowledged. No page. No rollback. 10:32 : Traffic ramps.</p>
+</div>
+<p>Logs scale linearly with traffic. 10:36 : Each pod is now writing hundreds of MBs per minute. 10:40 : Autoscaling adds pods, which adds… more logs. 10:43 : Nodes hit disk pressure. ENOSPC errors start. 10:47 : Checkout errors appear across regions. 11:02 : Rollback begins. 11:17 :System stabilizes.</p>
+<p>THE NUMBER WE DIDN&<span class="hashtag">#x27</span>;T DO</p>
+<p class="bullet-item">• ~45,000 requests/sec</p>
+<p class="bullet-item">• ~2–3 KB per log line</p>
+<p class="bullet-item">• ≈ 90–130 MB/sec</p>
+<p class="bullet-item">• ≈ 5–8 GB/min per region Multiply by pods. Multiply by regions. Multiply by autoscaling. At small scale, this is a log. At 50K RPS, it&<span class="hashtag">#x27</span>;s infrastructure. <span class="hashtag">#DAMAGE</span></p>
+<p class="bullet-item">• Short outage window</p>
+<p class="bullet-item">• Checkout failures</p>
+<p class="bullet-item">• Seven-figure revenue impact</p>
+<p class="bullet-item">• Unexpected logging bill</p>
+<p class="bullet-item">• One very uncomfortable postmortem THE</p>
+<h3 class="section-header"><span class="hashtag">#FIX</span> ✅ Log sampling enforced at 1% in prod ✅ PR checklist: &quot;log volume at 100% traffic?&quot; ✅ Disk alerts fire earlier ✅ Cost-impact alerts now escalate ✅ Fewer alerts, higher signal THE</h3>
+<h3 class="section-header"><span class="hashtag">#LESSON</span> This wasn&<span class="hashtag">#x27</span>;t a logging bug. It was a scale + toil problem. Reliability isn&<span class="hashtag">#x27</span>;t about stopping mistakes. It&<span class="hashtag">#x27</span>;s about making normal decisions safe at scale. WHOSE <span class="hashtag">#FAULT</span>? Sara Baqla wrote the logs. Poojitha A S approved the PR. The system allowed it. So we fixed the system.</h3>
+<p><span class="hashtag">#NEXT</span> The Infinite Retry Loop That Became a DDoS (Against Ourselves) <span class="hashtag">#WeBrokeItTogether</span> <span class="hashtag">#SRE</span> <span class="hashtag">#CloudCosts</span> <span class="hashtag">#Toil</span> <span class="hashtag">#ProductionStories</span> <span class="hashtag">#DevOps</span> <span class="hashtag">#FullstackDevloper</span></p>
+    </div>
+    <div class="post-image">
+      <img src="https://media.licdn.com/dms/image/v2/D5622AQEOmrRvH158hQ/feedshare-shrink_800/B56ZwL_BwsIwAk-/0/1769727597841?e=1775088000&amp;v=beta&amp;t=GH1rZA4L8_BOlhGFrRV40otuHX0h_IMCfyK6zmQcEb8" alt="Post image" loading="lazy"
+           onerror="this.parentElement.style.display='none'"/>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7422775549703655425/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_56.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_58.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

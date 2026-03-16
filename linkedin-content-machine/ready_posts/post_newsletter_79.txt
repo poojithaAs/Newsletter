@@ -1,0 +1,24 @@
+100% of organizations say containers are critical to production.
+
+82% admit they have been breached through containers in the past year.
+
+90% are still pulling from public registries with minimal hardening.
+
+We told everyone to shift left. They did. And they still got breached.
+
+Here is what actually happened: developers now run scanners. Scanners produce reports. Reports list hundreds of CVEs in dependencies three layers deep. The developer did not write that code. The developer cannot fix that code.
+
+Attackers figured this out. They stopped attacking the code. They started attacking the supply chain.
+
+In this week's DevOps Made Simple:
+
+✓ Why "shift left" alone was never enough
+✓ How attackers exploit what goes INTO your containers
+✓ The SLSA framework for proving your builds are clean
+✓ Why SBOMs are becoming the new security baseline
+
+Scanning is step one. It is not the whole answer.
+
+Is your team still relying on scanning alone?
+
+#DevOps #Security #Kubernetes #DevOpsMadeSimple

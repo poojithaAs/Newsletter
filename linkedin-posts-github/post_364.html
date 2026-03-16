@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 365 &middot; November 26, 2024 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">365 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_363.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_365.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">November 26, 2024</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p><span class="hashtag">#Day107</span> Preparing for Tomorrow&<span class="hashtag">#x27</span>;s Kubernetes HA Cluster Demo We&<span class="hashtag">#x27</span>;re excited to dive into setting up a High Availability Kubernetes Cluster tomorrow with 3 master nodes and 2 worker nodes. Today, let&<span class="hashtag">#x27</span>;s ensure we&<span class="hashtag">#x27</span>;re ready with the prerequisites: Pre-Requisites</p>
+<p class="numbered-item">1. Machines:</p>
+<p class="bullet-item">• 5 machines (or VMs) with:</p>
+<p class="bullet-item">• OS: Ubuntu 20.04 (or compatible)</p>
+<p class="bullet-item">• Minimum: 2 CPUs, 4GB RAM, 20GB storage (per node)</p>
+<p class="numbered-item">2. Network Setup:</p>
+<p class="bullet-item">• Private IP Range: Ensure a non-overlapping CIDR block for your internal VPC/subnet. Example:</p>
+<p class="bullet-item">• VPC CIDR: 10.0.0.0/16</p>
+<p class="bullet-item">• Subnet 1: 10.0.1.0/24 (Master Nodes)</p>
+<p class="bullet-item">• Subnet 2: 10.0.2.0/24 (Worker Nodes)</p>
+<p class="bullet-item">• Assign static or reserved private IPs to each node.</p>
+<p class="numbered-item">3. Public IP or Load Balancer:</p>
+<p class="bullet-item">• For control plane HA, set up a load balancer (e.g., HAProxy, AWS ELB) with a virtual IP accessible by all nodes.</p>
+<p class="numbered-item">4. Networking Plugin (CNI):</p>
+<p class="bullet-item">• Decide on a plugin like Calico or Flannel for Pod networking. We&<span class="hashtag">#x27</span>;ll use Calico in the demo.</p>
+<p class="numbered-item">5. Firewall Rules:</p>
+<p class="bullet-item">• Open these ports:</p>
+<p class="bullet-item">• API Server (6443): For communication between nodes.</p>
+<p class="bullet-item">• etcd (2379-2380): For master node communication.</p>
+<p class="bullet-item">• Node Communication (10250-10255): For kubelet and metrics.</p>
+<p class="bullet-item">• Custom Ports: Based on applications/services.</p>
+<p class="numbered-item">6. DNS Configuration:</p>
+<p class="bullet-item">• Ensure DNS resolution works between all nodes (private DNS or host entries).</p>
+<p class="numbered-item">7. Hostnames:</p>
+<p class="bullet-item">• Set distinct hostnames for each node (e.g., master-1, master-2, worker-1). Required Software</p>
+<p class="numbered-item">1. On All Machines:</p>
+<p class="bullet-item">• Docker or containerd as the container runtime.</p>
+<p class="bullet-item">• kubeadm, ku</p>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7267012697144090624/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_363.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_365.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

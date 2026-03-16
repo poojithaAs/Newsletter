@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 225 &middot; April 24, 2025 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">225 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_223.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_225.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">April 24, 2025</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p><span class="hashtag">#DAY204</span> <span class="hashtag">#TerraformTales</span>: The Mystery of the Missing S3 Bucket Problem: You apply your Terraform config, it runs successfully. But the S3 bucket? Nowhere to be found. You check the state. You double-check the region. You triple-check the bucket name. Still… nothing.</p>
+<p>Turns out—you used a count to conditionally create the bucket: resource &quot;aws_s3_bucket&quot; &quot;logs&quot; { count = var.enable_logging ? 1 : 0 bucket = &quot;my-app-logs&quot; } But in your variables? enable_logging = false. So Terraform silently skips creating the bucket. No errors, no warnings, just… nothing.</p>
+<p>Solution: Add output visibility or a warning to avoid getting ghosted by your own config: output &quot;logging_enabled&quot; { value = var.enable_logging description = &quot;Is logging enabled for this environment?&quot; } Or, better yet—use terraform plan and actually read it (yes, we&<span class="hashtag">#x27</span>;re all guilty). Lesson: Just because your plan is green doesn&<span class="hashtag">#x27</span>;t mean your infra is real.</p>
+<p>Terraform will always do exactly what you tell it—nothing more, nothing less.</p>
+    </div>
+    <div class="post-image">
+      <img src="https://media.licdn.com/dms/image/v2/D4D22AQFUNtF56yMN4Q/feedshare-shrink_800/B4DZZl5NBnHIAk-/0/1745466217690?e=1775088000&amp;v=beta&amp;t=6gQTzZit96w04-Q0x_Szb9PN_3RzhZ1Pq0RTkJA4Y1o" alt="Post image" loading="lazy"
+           onerror="this.parentElement.style.display='none'"/>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7321015942073729025/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_223.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_225.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

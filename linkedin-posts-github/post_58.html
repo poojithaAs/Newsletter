@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 59 &middot; January 29, 2026 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">59 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_57.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_59.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">January 29, 2026</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p>We call this series &quot;We Broke It Together.&quot; Because most production problems don&<span class="hashtag">#x27</span>;t belong to one person. They happen between development and DevOps. I&<span class="hashtag">#x27</span>;m Poojitha A S (<span class="hashtag">#DevOps</span> <span class="hashtag">#SRE</span>). Sara Baqla Baqla is <span class="hashtag">#FullStackDeveloper</span> We <span class="hashtag">#break</span> things together. We <span class="hashtag">#fix</span> them together. And we&<span class="hashtag">#x27</span>;re <span class="hashtag">#sharing</span> the lessons.</p>
+<p><span class="hashtag">#EPISODE</span> 1 : THE 3 AM DISASTER The Cron Job That Killed Checkout</p>
+<div class="dialogue">
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;So… I wrote a cleanup script.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Cool. What&<span class="hashtag">#x27</span>;s it clean?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Old orders. Runs at 3 AM every day.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Did you add an index on the date column?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Index? Does it really matter?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Did you test it on prod-sized data?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;It worked fine on my 50 test orders!&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;How many orders are in prod?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;…4.7 million?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Sara.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Yeah?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;We&<span class="hashtag">#x27</span>;re screwed.&quot; WHAT ACTUALLY <span class="hashtag">#HAPPENED</span> 3:00 AM — Cron job starts 3:02 AM — Database locks up 3:05 AM — Users can&<span class="hashtag">#x27</span>;t checkout 3:47 AM — Alerts finally wake us up 4:35 AM — Job killed manually <span class="hashtag">#Damage</span>: 2,847 failed checkouts $18K revenue lost THE</p>
+</div>
+<h3 class="section-header"><span class="hashtag">#FIX</span> ✅ Sara added the missing index</h3>
+<p class="bullet-item">• Query time: 12 minutes → 0.3 seconds ✅ Poojitha rescheduled the job to 2 AM (low traffic) ✅ Added a 30-second query timeout ✅ Tested on staging with real data size (this time) <span class="hashtag">#LESSONS</span> LEARNED Sara Baqla learned: &quot;Test with realistic data size.&quot; Poojitha A S learned: &quot;Ask about indexes before deployment.&quot; Both of us learned: &quot;If Slack pings at 3 AM… answer it or suffer.&quot; WHOSE <span class="hashtag">#FAULT</span> WAS IT?</p>
+<p>Both of us. And that&<span class="hashtag">#x27</span>;s the point. Sara Baqla wrote code without thinking about scale. Poojitha A S deployed without asking the right questions. We <span class="hashtag">#brokeit</span> together. We <span class="hashtag">#fixedit</span> together. NEXT <span class="hashtag">#EPISODE</span> The Log That Ate All the Disk Space The time Sara&<span class="hashtag">#x27</span>;s console.log() brought down the entire app. (Yes, one log line.</p>
+<p>Yes, I&<span class="hashtag">#x27</span>;m serious.)</p>
+    </div>
+    <div class="post-image">
+      <img src="https://media.licdn.com/dms/image/v2/D5622AQGMvs_AtgQYkg/feedshare-shrink_800/B56ZwHJqfNHAAg-/0/1769646500006?e=1775088000&amp;v=beta&amp;t=S2uAvm3tg90PUVLfHCSfUIU12qVtN5kkU8bZJ_ivFao" alt="Post image" loading="lazy"
+           onerror="this.parentElement.style.display='none'"/>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7422435399660265472/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_57.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_59.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

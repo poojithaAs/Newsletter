@@ -1,0 +1,46 @@
+LinkedIn Posts - 2025-07 (July)
+Total posts: 14
+================================================================================
+
+===POST_148=== DATE:2025-07-31
+ID:7356667636455231489 "I went through this. I don't want anyone else to go through this alone." That's what MERCY STRICKLAND said. She didn't say it for applause. She said it because she's lived through the silence, the survival, the stretch of holding everything together when no one else sees you. And in that moment, I knew I wasn't just meeting someone. I was witnessing quiet leadership at its truest form. I'm so grateful to share that I've collaborated with Chai and Chit Chat - C3 Women Only, a no-fee community for women in Dallas. This isn't your typical "women in tech" group. C3 was built on midnight phone calls, shared heartbreaks, unspoken understanding, and chai. Not hashtags. Not promotions. Not ego. I met MERCY STRICKLAND through her husband David Strickland at a Dallas developers meetup. Later, I joined a C3 newcomers session… and everything shifted. Mercy stood up with calm conviction and said: "We don't promote business. We don't discuss politics or religion. We don't gossip. This is a space for women to complement each other. If that's a dealbreaker, this isn't your space." She didn't say it to impress. She said it to protect. And I thought , this isn't just kindness. This is courage. This is leadership. In a world that measures leadership by titles and metrics, Mercy reminded me of what it actually looks like: Showing up for someone who's falling apart. Building over 70 groups for women to reconnect, restart, and rise. Hugging someone who whispers, "C3 saved me." And never once saying, "Look what I did." Tomorrow, I'll be publishing a full, unfiltered interview with Mercy. We talked about: • How C3 began as one woman's response to loneliness and turned into a lighthouse for thousands • Why empathy isn't just a nice-to-have , it's the deepest leadership muscle • The invisible emotional labor behind healing spaces • How C3 is helping women reclaim their careers, confidence, and community • And the powerful transformations that begin not with saving someone — but simply sitting beside them Did you know? C3 helps women: • Restart their careers in tech, cloud, and data • Heal from betrayal, burnout, abuse, and postpartum • Build public speaking confidence and self-worth • Join fitness, hiking, healing, crafts, and study circles • Feel seen , not fixed This is the kind of leadership I believe in. Not the kind that chases followers. The kind that creates more leaders. If you've ever felt like you're rebuilding from scratch… this story is for you. If you've ever poured into others without being seen… you'll feel seen here. If you've ever wondered if quiet strength matters… Mercy shows us it does. Follow me. Follow Chai and Chit Chat - C3 Only. The full interview drops tomorrow. And trust me : this one will stay with you. #C3WomenOnly #WomenInTech #EmpathyIsLeadership #LeadershipWithSoul #QuietPower #HealingTogether #NoMarketingAllHeart
+
+===POST_149=== DATE:2025-07-30
+ID:7356315242802372608 New edition is live: "When SRE Teams Should Walk Away." Learn when stepping back leads to sustainable success. Read it today on DevOps Made Simple.
+
+===POST_150=== DATE:2025-07-28
+ID:7355590444921049091 Just dropped: Edition 19 Learn how SRE goes beyond your system and into your customers' world
+
+===POST_151=== DATE:2025-07-22
+ID:7353239550833414144 Monitoring war: Zabbix vs Zoho OpsManager Which one actually gives you full visibility metrics, logs, traces, and Kubernetes? If you're a DevOps engineer or SRE, you've probably asked this at some point. Here's a clear, simple comparison to help you choose Zabbix • ✅ Open-source and free • ✅ Monitors servers, networks, apps, and Kubernetes (with Prometheus) • ✅ Highly customizable dashboards and alerts But… • ⚠️ No built-in tracing • ⚠️ Needs external tools for log management • ⚠️ Setup takes time and manual effort Best for: Teams that want full control and are comfortable with DIY setup Zoho OpsManager • ✅ Cloud-based and ready to go • ✅ Built-in support for metrics, logs, and APM tracing • ✅ Auto-discovers Kubernetes resources (nodes, pods, services) • ✅ Prebuilt dashboards and alerts But… • ⚠️ Paid (with free trial) • ⚠️ Less customizable than Zabbix for edge cases Best for: Teams that want fast, all-in-one monitoring without infrastructure overhead
+
+===POST_152=== DATE:2025-07-18
+ID:7351818574564352001 Grateful to Present at Kubernetes & Cloud Native North Dallas Meetup! What an incredible evening of learning, community, and Kubernetes magic! Thank you to Aly Ibrahim and Damian Igbe, PhD for organizing and bringing us all together. I had the opportunity to present "Simplifying Kubernetes CLI with kubectl-ai" where we explored how AI can help us: Debug clusters Generate YAML Interact with Kubernetes using plain English Huge thanks to Improving for generously hosting the event and sponsoring Special shoutout to KodeKloud for sponsoring lab access and helping bring the demo to life. And a BIG thank you to ADITYA CHAUHAN and Shashank Karpal from the KodeKloud team for going above and beyond to ensure we had the right lab setup, access, and environment needed for a seamless, hands-on demo of kubectl-ai inside a live Kubernetes cluster. Want to explore more? KodeKloud Lab (kubectl-ai hands-on): https://lnkd.in/g7W5c_db GitHub Demo Repo: https://lnkd.in/gXzQmkE6 Presentation Slides :https://lnkd.in/g5YmtT4B #Kubernetes #kubectlAI #DevOps #KodeKloud #Improving #GitOps #CloudNative #MeetupRecap #SRE #InfraAsCode #AIinDevOps
+
+===POST_153=== DATE:2025-07-14
+ID:7350508247117647872 The new DevOps Made Simple is here! Learn how kubectl-ai and KodeKloud make Kubernetes easy to learn and use.
+
+===POST_154=== DATE:2025-07-13
+ID:7350237360678162432 FinOps is evolving, and if you're not considering broader CloudOps challenges, you're falling behind. Fortunately, Kion is paving the way with our comprehensive approach to #cloudgovernance, recognized by Forrester as increasingly important in response to the surge in cloud usage, critical workloads, and regulatory requirements. Read this blog by our resident FinOps expert, Tatum Tummins to explore the evolution of FinOps into CloudOps, and see how Kion's governance by default approach is driving policy and accountability across teams to maximize cloud value.
+
+===POST_155=== DATE:2025-07-11
+ID:7349430116109688833 New Edition Now Available! Too Many YAML Files? Make Kubernetes Configs Easier Managing lots of YAML files across different environments can get messy fast. In Episode 18 of DevOps Made Simple, I show how using Jsonnet with smart config design can: Cut down on repetitive work Create an easy-to-maintain structure Make your Kubernetes setup clearer and more organized Read the full newsletter to improve how you handle configurations.
+
+===POST_156=== DATE:2025-07-09
+ID:7348803284356263938 New edition is live! Full link here : https://lnkd.in/gPeN2VCi
+
+===POST_157=== DATE:2025-07-09
+ID:7348802717722562560 New edition is live! Config isn't code. It's a conversation. Make it easy to answer, not easy to break.
+
+===POST_158=== DATE:2025-07-07
+ID:7347980216310386689 New Interview Edition: DevOps Made Simple #From101CertsToCommunityPower What does it take to stay relevant in tech for 30+ years? Sammy Cheung didn't just earn 101+ certifications.he built a mindset around curiosity, clarity, and community. In this honest conversation, we talk about: What certifications actually matter (and how to retain them) How to manage learning, working, and posting without burning out Why community > perfection Visibility, imposter syndrome, and real-world DevOps advice "Start today. Even if it's cheesy. Even if it's messy. That's your 26-mile run." — Sammy Cheung Read the full interview now #DevOps #Certifications #SRE #Mindset #CareerGrowth #SammyCheung #DevOpsMadeSimple #LinkedInNewsletter
+
+===POST_159=== DATE:2025-07-04
+ID:7346893090323906560 New edition is live: How Google SREs plan capacity to scale without failure. Gmail, YouTube, and practical checklists, all in this week's DevOps Made Simple.
+
+===POST_160=== DATE:2025-07-02
+ID:7346168298692071424 Kubernetes Networking made simple. Fire drills, DNS fixes, pod flows, kube-proxy, CNIs ,it's all here. Dive into the latest DevOps Made Simple: New editions: Mon | Wed | Fri Like • Share • Follow
+
+===POST_161=== DATE:2025-07-01
+ID:7345877590802382849 I'm excited that I had a great online interview Q&A session with Content Producer Poojitha yesterday about the 2025 DevOps Journey. Keep an eye on Poojitha's DevOps Newsletter! It is coming soon! --- Follow Sammy Cheung to have a fun and rewarding upskilling DevOps journey! => https://lnkd.in/gdUnCNnE Cloud Ultra Pro YouTube => https://lnkd.in/gPHfRRPj If you are interested in upskilling on DevOps and Kubernetes, I highly recommend the KodeKloud hands-on training platform. => https://lnkd.in/g3WR4RZF For a limited time, apply the stackable discount code: CUP101KK (extra 20% off) #cloudultrapro #cloudjourney #aws #azure #gcp #devops #kodekloud #kubernetes
+

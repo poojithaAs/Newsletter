@@ -1,0 +1,21 @@
+KubeCon Europe has 224 sessions this year. Most of them will not change how you work.
+
+These 5 will.
+
+For the first time ever, AI agents got their own dedicated track. Not "AI in cloud native." AI agents as first class citizens on Kubernetes.
+
+Prometheus 3.0 is here. This is not a patch. It is a major version bump that changes how you collect, store, and query metrics.
+
+In this week's DevOps Made Simple, I cover:
+
+✓ The 5 sessions worth blocking your entire schedule for
+✓ Why AI agents on Kubernetes need different resource models, RBAC, and observability
+✓ What Prometheus 3.0 means for your existing PromQL queries
+✓ Why 90% of enterprises now have dedicated platform engineering teams
+✓ The eBPF shift that is changing container security
+
+Your time at KubeCon is limited. Your FOMO is not. This is your battleplan.
+
+What are you most looking forward to at KubeCon?
+
+#KubeCon #Kubernetes #DevOps #DevOpsMadeSimple

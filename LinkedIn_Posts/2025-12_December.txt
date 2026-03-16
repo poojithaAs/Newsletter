@@ -1,0 +1,43 @@
+LinkedIn Posts - 2025-12 (December)
+Total posts: 13
+================================================================================
+
+===POST_67=== DATE:2025-12-19
+ID:7407789344574435331 OWASP DevSecOps Guideline New Edition Is Live
+
+===POST_68=== DATE:2025-12-17
+ID:7407167272869457921 Day #4/60 Why Dockerfiles Matter More Than Models Your model is not failing because it is bad. It fails because the runtime changes. A Dockerfile freezes the execution environment. Python version. Dependencies. System libraries. That is why pip freeze is not enough. If the Dockerfile is not explicit The model may pass locally And fail silently in production. Intermediate rule. A model is production ready only when the Dockerfile is boring and predictable. Question. What is the most confusing environment bug you have seen in production. Next Day 5/60. Why Docker alone is not enough for production ML.
+
+===POST_69=== DATE:2025-12-15
+ID:7406342810758471680 New edition is live. Deployments do not fail because teams are careless. They fail because deployment is rarely automated in the same way as CI. This edition explains how Octopus Deploy transforms deployment panic into calm, repeatable releases.
+
+===POST_70=== DATE:2025-12-13
+ID:7405613973368246272 DAY 3/60 : Why Your Model Dies in Production You trained a model on your laptop. 98% accuracy. Perfect. Deploy to production → instantly crashes. Why? Different Python version, different NumPy, missing system libraries. Your environment ≠ production environment. Docker fixes this: It bundles your exact Python version, dependencies, system libraries, and model code into one container that runs identically everywhere — laptop → staging → production → cloud. 73% of ML deployment failures come from environment mismatches. Docker removes this problem completely. Tomorrow: Your first Dockerfile for ML models.
+
+===POST_71=== DATE:2025-12-12
+ID:7405259337012740096 New edition is live
+
+===POST_72=== DATE:2025-12-12
+ID:7405088694589829121 DAY 2/60 Your model worked in Jupyter. Production killed it in 48 hours. Here's the part nobody tells you. THE PROBLEM You trained a fraud model. 95% accuracy. Beautiful dashboards. Then production hits: → Breaks in 2 days → No monitoring → No drift checks → DevOps stuck → 6 weeks gone Not because the model failed but because the environment changed. WHY IT HAPPENS Training is easy. Running it every day is hard. Training = cooking at home MLOps = running a restaurant for 10,000 people What works locally rarely survives real traffic. WITHOUT MLOPS ✗ Laptop-only ✗ Silent failures ✗ No alerts ✗ No reproducibility WITH MLOPS ✓ Automated pipelines ✓ Versioned data + models ✓ Monitoring + drift alerts ✓ Auto-rollback THE TRUTH If it can't run in production, it's not ML — it's a science project. WHAT YOU'LL LEARN MLflow • Docker • Kubernetes • Prometheus Everything you need to go from laptop → production → reliability. YOUR TURN Has your model ever died in production? Drop it below — I'll help debug it. Tomorrow: 10 Linux commands every MLOps engineer uses daily. #MLOps #DevOps #AI #DataScience
+
+===POST_73=== DATE:2025-12-10
+ID:7404630392084869120 60 Days. 60 Insights. Why Am I Doing This? Day 1/60 We're all busy. Most online posts are too long. So, for the next 60 days, I'll share one simple idea daily. You can read it in just 30 seconds. Today's topic How do you know if an alert is real or just noise? Do you know which tools actually help? Tools I use Prometheus gathers all our system data. Grafana turns this data into easy-to-read charts. An AI then learns what's "normal." It only flags truly unusual things. example Before AI: CPU spikes, you get 20 alerts. You spend hours checking everything. After AI: It tells you, "This spike happens every night, ignore it." Or it says, "This spike is new, check this service now." We fix problems fast because the AI tells us exactly where to look. Your turn What problem has AI helped you solve?
+
+===POST_74=== DATE:2025-12-08
+ID:7403850613589274624 Closing Message from C3 & MERCY STRICKLAND From Mercy and the entire C3 team — thank you. Thank you to every admin who showed up this year with commitment, patience, and heart. Thank you to every member who trusted this space with your stories, your struggles, and your small wins. You are the reason C3 keeps growing in strength and purpose. As we end this year, I want you to remember one thing: This community exists because of you .because women choose to show up for each other without expectation, without judgment, and without noise. C3 will continue to protect that purity. We will continue to lead with boundaries, honesty, and compassion. We will continue to build systems that support women when life becomes heavy. Walk with confidence into 2026. Know that you are not alone. Know that we are building something bigger, something long-lasting, something women can rely on. With gratitude, MERCY STRICKLAND & C3 Women Only
+
+===POST_75=== DATE:2025-12-08
+ID:7403799019292131328 New Edition is live Online vs Offline Serving: The Simplest Way to Understand MLOps
+
+===POST_76=== DATE:2025-12-07
+ID:7403531073382625280 C3 Women Leaders yearend meet 2025 The meeting today had focused Plans discussion for upcoming year and the great value that we will be bringing to the community at large. Our discussions started with retrospecting the experiences, wins, challenges and opportunities encountered in current year. With multitued of teams and varied challenges, each group was able to learn from each other and implement ideas which worked successfully in groups that applied. MERCY motivates us to lead, provides freedom to implement change within the defined set of rules. These are guardrails which lets us stay on track Fellow Admins are all accomplished Leaders with great skills, talent and insights, sharing the forum with you all is a privilege.. Here's to exciting New Year 2026 with all New initiatives to support and empower women. Peace and love to all Women
+
+===POST_77=== DATE:2025-12-03
+ID:7402001240592953344 New Edition is live
+
+===POST_78=== DATE:2025-12-01
+ID:7401285792297357312 Need some motivation to keep going on the job hunt or finally finish that passion project? Get yourself an accountability buddy! In the spirit of the holiday season, I would like to share how grateful I am for Poojitha A S who continues to show up, support and encourage me! #accountabilityBuddy #womenInTech #techCommunity #gratitude #motivationMonday https://lnkd.in/gXT83iNj
+
+===POST_79=== DATE:2025-12-01
+ID:7401266341544132608 New Edition is Live! 1 Serverless isn't replacing Kubernetes and Kubernetes isn't going anywhere. 2 The real answer is choosing the right tool for the stage your company is in. 3 The future is hybrid: Serverless for speed, Kubernetes for power.
+

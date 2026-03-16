@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 428 &middot; October 04, 2024 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">428 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_426.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_428.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">October 04, 2024</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p><span class="hashtag">#Day54</span> 🚀 <span class="hashtag">#ErrorHandlingSeries</span> - <span class="hashtag">#Networking</span> Networking issues can bring down even the most resilient pipelines. Let&<span class="hashtag">#x27</span>;s walk through 4 common networking errors, <span class="hashtag">#whatitmeans</span>, <span class="hashtag">#howithappens</span>, and real-world <span class="hashtag">#solutions</span>! 🌐 🔌 <span class="hashtag">#ConnectionRefused</span> <span class="hashtag">#WhatItMeans</span>: A service is refusing to accept your connection on a specific port.</p>
+<p>This often happens when the service is not running or a firewall is blocking the connection. <span class="hashtag">#Scenario</span>: While working on deploying a web application, the service failed to start, showing a &quot;Connection refused&quot; error when I tried to access it. Upon investigation, I found that <span class="hashtag">#Nginx</span> was not running due to a configuration change during a restart.</p>
+<p><span class="hashtag">#HowItWasFixed</span>: I checked the status of the <span class="hashtag">#Nginx</span> service and found it wasn&<span class="hashtag">#x27</span>;t running.</p>
+<p>Starting the service manually and verifying the firewall rules resolved the issue. 👉 <span class="hashtag">#Solution</span>: sudo systemctl start nginx to start the service and sudo ufw allow 80 to open the <span class="hashtag">#HTTP</span> port. 🔄 <span class="hashtag">#NetworkTimeout</span> <span class="hashtag">#WhatItMeans</span>: A network request is timing out, indicating a delay or failure in reaching the destination server.</p>
+<p>This is often due to slow or congested <span class="hashtag">#network</span> routes, or incorrect <span class="hashtag">#routing</span> configuration. <span class="hashtag">#Scenario</span>: In a <span class="hashtag">#CI</span>/CD pipeline, pulling dependencies from an external server was timing out. A traceroute showed that packets were getting dropped at one of the intermediate hops due to congestion.</p>
+<p><span class="hashtag">#HowItWasFixed</span>: After confirming the issue, we adjusted the timeout values and scheduled a retry in the pipeline to wai</p>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7247778479784525824/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_426.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_428.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

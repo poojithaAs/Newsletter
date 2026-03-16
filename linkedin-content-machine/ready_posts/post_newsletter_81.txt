@@ -1,0 +1,18 @@
+68% of Kubernetes teams overspend by 20 to 40 percent. Most of them have no idea.
+
+One team found 3 GPUs running for 18 months under a "test" namespace. $47,000. Nobody checked.
+
+GPUs changed the equation. A100s cost $2 to $3 per hour. When they sit at 10% utilization waiting for batch jobs, you are burning money for nothing.
+
+In this week's DevOps Made Simple, I break down:
+
+✓ A 5 step audit you can run in 10 minutes flat
+✓ The most common money leaks hiding in your clusters
+✓ Why resource requests are almost always wrong (and what to do about it)
+✓ How to set up cost governance so this never happens again
+
+The fix is simple. The problem is nobody looks.
+
+Have you ever found a surprise cost hiding in your infrastructure? Tell me about it.
+
+#DevOps #Kubernetes #FinOps #DevOpsMadeSimple

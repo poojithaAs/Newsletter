@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post 48 &middot; February 04, 2026 | Poojitha A S</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> DevOps Made Simple</a>
+  <span class="counter">48 / 442</span>
+</div>
+
+<div class="container">
+
+  <div class="nav-bar">
+    <a href="post_46.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_48.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+  <div class="card">
+    <div class="post-header">
+      <div class="avatar"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#0a66c2"/><text x="24" y="30" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="20" font-weight="bold">P</text></svg></div>
+      <div class="author-info">
+        <div class="author-name"><a href="https://www.linkedin.com/in/poojitha-a-s/" target="_blank" rel="noopener">Poojitha A S</a></div>
+        <div class="author-tagline">DevOps & SRE Engineer | Content Strategist</div>
+        <div class="post-date">February 04, 2026</div>
+      </div>
+    </div>
+    <div class="post-body">
+<p>Episode 8 <span class="hashtag">#WeBrokeItTogether</span> The Bug We Couldn&<span class="hashtag">#x27</span>;t See (Monday, 10:15 AM. A support ticket appears.) SUPPORT TICKET: &quot;Checkout taking 30+ seconds randomly.&quot;</p>
+<div class="dialogue">
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Checkout latency. Again.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Do we have OpenTelemetry traces for it?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;I found a trace. Eight hundred milliseconds total.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;But users are seeing thirty seconds.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Then we&<span class="hashtag">#x27</span>;re not looking at the same request.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;What is the sampling rate?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Tail-based sampling. We only keep one out of every hundred requests.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;So we&<span class="hashtag">#x27</span>;re throwing away ninety-nine percent of the evidence.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;To save money.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Including the slow ones.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Let&<span class="hashtag">#x27</span>;s capture everything for ten minutes.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;That&<span class="hashtag">#x27</span>;s… a lot of data. 500GB of traces/hour&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Hope our Jaeger backend can handle it..&quot; (Three minutes later. Alarms.) JAEGER: &quot;Out of memory. Queries timing out.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;The tracing system just fell over.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Okay. Back to one percent.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;I&<span class="hashtag">#x27</span>;m checking payment service logs directly.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Without traces to connect everything?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;The good old-fashioned way.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Payment requests are timing out at thirty seconds.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Only on Visa transactions?&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Visa&<span class="hashtag">#x27</span>;s API is slow today.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;And we couldn&<span class="hashtag">#x27</span>;t see it in traces. Let&<span class="hashtag">#x27</span>;s change how we sample Switching to head-based sampling.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Always sample slow requests and errors.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Capture everything over five seconds.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;And just 1% of the fast ones.&quot; TRACE VIEW: checkout → payment service → Visa gateway (28.4s)</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;There it is.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;Head-based sampling caught it!.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Capturing everything shows every problem.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;But it crashes the system.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;Capturing 1% saves money.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;But misses the real issues.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Sara Baqla:</strong> &quot;So we sample intelligently.&quot;</p>
+<p class="dialogue-line"><strong class="speaker">Poojitha A S:</strong> &quot;We watch what matters.&quot; <span class="hashtag">#fullStackDeveloper</span> <span class="hashtag">#devOps</span> <span class="hashtag">#sre</span></p>
+</div>
+    </div>
+    <div class="post-footer">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7424949903874985985/" target="_blank" rel="noopener">View on LinkedIn &nearr;</a>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <a href="post_46.html" class="nav-btn">&larr; Prev</a>
+    <div class="nav-center"><a href="index.html">All Posts</a></div>
+    <a href="post_48.html" class="nav-btn">Next &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>

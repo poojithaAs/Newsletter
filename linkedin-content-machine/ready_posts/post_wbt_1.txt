@@ -1,0 +1,27 @@
+A single deployment wiped out the production database. It took 14 hours to recover. The postmortem changed everything.
+#WeBrokeItTogether
+
+#SETUP
+Friday afternoon. 4:47 PM. "Quick fix" going out before the weekend.
+
+Sara Baqla: "I am pushing a migration script. Small change."
+Poojitha A S: "Did you test it against a copy of production data?"
+Sara Baqla: "It worked in staging."
+Poojitha A S: "Staging has 200 rows. Production has 4 million."
+Sara Baqla: "It will be fine."
+Poojitha A S: "Those are the last words before every outage."
+
+The migration had a WHERE clause that matched every row. It ran a DELETE instead of an UPDATE. 4 million rows gone in 11 seconds.
+
+#FIX
+✓ No deployments after 3 PM on Fridays. Ever.
+✓ All migrations run against a production sized dataset first.
+✓ Destructive queries require a second pair of eyes.
+✓ Backups tested every week, not just stored.
+
+#LESSON
+The backup existed. But nobody had tested restoring it in 8 months. It took 14 hours because the restore process itself had a bug.
+
+What is the worst "quick fix" your team has pushed?
+
+#DevOps #SRE #Kubernetes

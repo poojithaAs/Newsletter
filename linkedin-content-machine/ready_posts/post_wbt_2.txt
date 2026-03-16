@@ -1,0 +1,27 @@
+One server was handling 73% of all traffic. The other three were basically on vacation. Nobody noticed for 6 weeks.
+#WeBrokeItTogether
+
+#SETUP
+Response times were creeping up. Slowly. Not enough to trigger alerts. Just enough for users to notice.
+
+Sara Baqla: "Users are saying the app feels sluggish."
+Poojitha A S: "What does the load balancer say?"
+Sara Baqla: "Round robin. Traffic should be even."
+Poojitha A S: "Should be and is are very different things."
+Sara Baqla: "Let me check the actual distribution."
+Poojitha A S: "And there it is."
+
+Sticky sessions were enabled during a debugging session 6 weeks ago. Nobody turned them off. One server got all the heavy users and kept getting stickier.
+
+#FIX
+✓ Monitor traffic distribution per node, not just total traffic.
+✓ Set expiry on every temporary config change. If it does not expire, it becomes permanent.
+✓ Weekly config drift checks. Compare current state to expected state.
+✓ Alert on uneven load distribution above 60/40.
+
+#LESSON
+The config change took 10 seconds. Finding it took 6 weeks. Temporary changes are the most permanent things in infrastructure.
+
+What is the longest a "temporary" fix has lasted on your team?
+
+#DevOps #SRE #LoadBalancing

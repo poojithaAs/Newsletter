@@ -1,0 +1,46 @@
+LinkedIn Posts - 2025-10 (October)
+Total posts: 14
+================================================================================
+
+===POST_92=== DATE:2025-10-31
+ID:7389827473796001792 Harnessing AI for Strategic Advantage Attended "Harnessing AI for Strategic Advantage" today at the Dallas Regional Chamber, led by David O'Hara, President of Improving . It reminded me why I've enjoyed being around this community for over a year. From meetups, game nights, and movie screenings to leadership sessions, Improving always finds that perfect balance. It's a company that does serious work but never takes itself too seriously. David's talk was packed with clarity and humor. Two lines stood out to me: "AI is like an intern, even a Harvard intern is still an intern. Smart, yes, but it still needs direction." "If you're not paying for the product, you're the product." Those thoughts hit deeply — a reminder that AI is powerful, but it needs human judgment, accountability, and boundaries. Every time I attend an Improving event, it feels less like a company and more like a person — thoughtful, curious, and grounded. #AI #Leadership #Improving
+
+===POST_93=== DATE:2025-10-27
+ID:7388567587745554432 New Edition is live When You Forget .gitignore Massive repos, slow clones, and version mismatches. Live AWS passwords and database credentials exposed. Testing secrets leaked, permanently in Git history. Debug files creating code review chaos. Your project becomes a security and collaboration nightmare.
+
+===POST_94=== DATE:2025-10-24
+ID:7387480528419139584 New edition is live : GitHub Actions: A Simpler Migration Jenkins was complex and maintenance-heavy. GitHub Actions offers a modern, cloud-native approach. Migrate from server-based Groovy to integrated YAML workflows. Benefit from automatic scaling, marketplace actions, and secure secrets. Simplify your CI/CD with event-driven automation. Achieve a more manageable and scalable software delivery process.
+
+===POST_95=== DATE:2025-10-22
+ID:7386772102005309440 New edition is live Databricks vs Snowflake Databricks: Apache Spark-based platform for data science, ML, and big data processing Snowflake: Cloud data warehouse for structured data with easy SQL querying Databricks excels at complex transformations, AI/ML, and real-time streaming Snowflake shines in business analytics, reporting, and concurrent user access Pricing: Snowflake is simple pay-as-you-go; Databricks offers granular control Many companies use both: Snowflake for data warehousing, Databricks for advanced analytics
+
+===POST_96=== DATE:2025-10-20
+ID:7386148383423524864 New edition is live
+
+===POST_97=== DATE:2025-10-17
+ID:7385080034622906368 Attended Snowflake World Tour Dallas yesterday An inspiring day filled with innovation and hands-on learning. I joined the Snowflake Labs to explore Snowpipe Streaming, Dynamic Tables, dbt native projects, Gen 2 Warehouses, and Python on Snowflake. Loved seeing how AI and governance are now built into the platform through Horizon and Data Science Agents. Snowflake truly brings data, AI, and collaboration together seamlessly. Grateful for such an insightful experience and the chance to learn from the best in data.
+
+===POST_98=== DATE:2025-10-12
+ID:7382933952384159744 True Mentorship Is Rare and Transformational Today, I had the privilege of being mentored by MERCY STRICKLAND, the founder of C3 Women Only, and it reminded me what real mentorship feels like. Before my session, she had already spent hours mentoring others. Yet when we spoke for an hour and a half without a single pause, she was fully present, patient, and kind. Mercy is a certified trainer, coach, and facilitator, but what makes her truly extraordinary is her selflessness. She personally meets with each of C3's 80 plus admins one on one, gives them guidance, assigns meaningful tasks, and follows up not to manage them, but to help them grow into leaders. She uses her triple certifications not for recognition, but to uplift women, helping them heal, grow, and rediscover their strength. She even waited until my cab arrived safely before heading off, not to rest, but to mentor yet another woman. From her, you can always expect nothing but kindness. That is the kind of leadership that changes lives, quiet, grounded, and full of grace. Thank you, MERCY STRICKLAND, for being the mentor who listens with her heart and leads with purpose. #Mentorship #Leadership #Kindness #Gratitude #Inspiration #C3Women #Empathy #Growth #WomenSupportingWomen
+
+===POST_99=== DATE:2025-10-10
+ID:7382559644625403904 https://lnkd.in/gzvAN6pw
+
+===POST_100=== DATE:2025-10-10
+ID:7382407113312088064 New Edition is Live: AWS Migration – 6 Essential Truths for Success Every company talks about moving to AWS, but few discuss what truly makes migrations succeed. It's not just about lift and shift — it's about planning, governance, and disciplined execution. This edition of DevOps Made Simple uncovers: ✅ The real migration hurdles most teams face ✅ The 7R strategy simplified for practical use ✅ Proven methods for cost, security, and modernization These six truths remind us that successful migration isn't a checklist. It's a mindset — one that rewards preparation, automation, and continuous learning.
+
+===POST_101=== DATE:2025-10-10
+ID:7382237486137184256 CODE TOGETHER Dallas Software Developers Group Meetup Loved spending the evening with an amazing community of developers and learners at Code Together. Loved meeting new faces and exchanging ideas. Events like these make tech feel less intimidating and a lot more fun! Alexis K. Roberson Jessica Hart Felicity Randol Samuel Goodell Sravan Dasari #DallasDevelopers #CodeTogether #WomenInTech #Networking #Community #DevOps
+
+===POST_102=== DATE:2025-10-08
+ID:7381682366030831616 New Edition Is Live: Why Linux Is Still the Backbone of DevOps Linux is the fundamental operating system behind nearly all modern DevOps infrastructure from containers and Kubernetes to CI/CD pipelines and cloud tooling. Every DevOps engineer must master Linux commands for system checks to quickly diagnose issues like CPU, memory, and disk exhaustion. Proficiency in file navigation and log analysis using tools like grep and awk is crucial for effective incident response and debugging. Understanding permissions (chmod, chown) and process management (ps, kill, systemctl) gives you control over critical services, while network diagnostics (ping, curl, ss) turn vague complaints into concrete, actionable proof. Ultimately, a deep understanding of the Linux terminal empowers faster debugging, smarter automation, and the delivery of reliable, production-ready infrastructure. Read the full edition: Why Linux Is Still the Backbone of DevOps Follow & Subscribe: DevOps Made Simple — every Monday, Wednesday, and Friday for hands-on insights that make complex DevOps topics simple.
+
+===POST_103=== DATE:2025-10-06
+ID:7380957514810585088 New Edition is Live! DevOps Made Simple: Kubernetes Troubleshooting In microservices, the real problem isn't failure — it's how fast you find the fix. Quick Start: 3 essential commands — kubectl get pods, kubectl logs, kubectl describe Emergency Checklist: 6-step approach to incident response Problem Categories: Commands by issue type — pod health, networking, config Advanced Techniques: Node debugging & crash analysis Helpful Tools: Lens, K9s, Stern New editions every Monday, Wednesday & Thursday at 8:30 AM CST Follow & subscribe to DevOps Made Simple for practical, 5-minute insights that keep you calm when production isn't. #DevOps #SRE #Kubernetes #Cloud #Observability #IncidentResponse #DevOpsMadeSimple
+
+===POST_104=== DATE:2025-10-03
+ID:7379870348000886784 New edition is live. Subscribe to my newsletter for more.
+
+===POST_105=== DATE:2025-10-01
+ID:7379145618302128128 New Edition is Live
+

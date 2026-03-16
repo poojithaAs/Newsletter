@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1200px; height: 627px; overflow: hidden; }
+.card {
+  width: 1200px; height: 627px;
+  background: linear-gradient(135deg, #0A66C2 0%, #1E3C72 50%, #0D1B3E 100%);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  padding: 60px 80px;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.badge {
+  position: absolute; top: 32px; left: 40px;
+  background: rgba(255,255,255,0.15);
+  color: #fff; padding: 8px 20px;
+  border-radius: 20px; font-size: 16px;
+  font-weight: 600; letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+.icon { font-size: 52px; margin-bottom: 20px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); }
+.title {
+  color: #ffffff; font-size: 42px; font-weight: 800;
+  text-align: center; line-height: 1.25; max-width: 1000px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.subtitle {
+  color: rgba(255,255,255,0.85); font-size: 20px;
+  text-align: center; margin-top: 16px; max-width: 800px; line-height: 1.4;
+}
+.footer {
+  position: absolute; bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+  color: rgba(255,255,255,0.8); font-size: 16px;
+}
+.avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 18px; color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.brand { font-weight: 700; color: #fff; }
+.div { opacity: 0.4; }
+</style></head><body>
+<div class="card">
+  <div class="badge">#WeBrokeItTogether</div>
+  <div class="icon">💬</div>
+  <div class="title">The Deployment That Deleted Production</div>
+  <div class="subtitle">4 Million Rows Gone in 11 Seconds</div>
+  <div class="footer">
+    <div class="avatar">P</div>
+    <span class="brand">Poojitha A S</span>
+    <span class="div">|</span>
+    <span>DevOps Made Simple</span>
+  </div>
+</div>
+</body></html>

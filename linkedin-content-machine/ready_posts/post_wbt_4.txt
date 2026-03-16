@@ -1,0 +1,28 @@
+Every Tuesday at 2 AM the app crashed. Every other day it was perfectly fine. It took us 3 weeks to figure out why.
+#WeBrokeItTogether
+
+#SETUP
+The monitoring showed a clean pattern. Memory usage climbing every Tuesday night. OOM kill at 2 AM. Restart. Fine for another week.
+
+Sara Baqla: "It is only Tuesdays. That makes no sense."
+Poojitha A S: "What runs on Tuesdays?"
+Sara Baqla: "Nothing special. Same traffic. Same jobs."
+Poojitha A S: "Something is different. Check the cron jobs."
+Sara Baqla: "The weekly report generator. It runs Tuesday at midnight."
+Poojitha A S: "How much data does it load into memory?"
+Sara Baqla: "All of it. Every transaction from the past week."
+
+The report generator loaded a week of transactions into a single array. Every week the dataset grew. After 3 months it passed the memory limit. But only on Tuesdays.
+
+#FIX
+✓ Stream large datasets. Never load everything into memory at once.
+✓ Set memory limits on every job, not just the main app.
+✓ Monitor memory by process, not just by pod.
+✓ Correlate crashes with scheduled jobs. The answer is usually in the cron tab.
+
+#LESSON
+The hardest bugs are the ones with patterns. If something fails at the same time every week, the answer is in what runs at that time.
+
+What is the weirdest bug pattern your team has seen?
+
+#DevOps #SRE #Debugging
